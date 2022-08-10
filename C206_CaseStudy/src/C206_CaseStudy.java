@@ -11,7 +11,7 @@ public class C206_CaseStudy {
 		ArrayList<orderbill> orderList = new ArrayList<orderbill>();
 		ArrayList<monthlymenu> monthlyList = new ArrayList<monthlymenu>(); 
 
-		
+		String hello= "hi";
 
 
 	}
