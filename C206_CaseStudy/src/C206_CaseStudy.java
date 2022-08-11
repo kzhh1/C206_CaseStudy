@@ -41,11 +41,13 @@ public class C206_CaseStudy {
 				int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
 				
 
-				if (itemType == 1) {
+				if (foodOpt == 1) {
 					// Add a camcorder
-					Camcorder cc = inputCamcorder();
+					 cc = inputCamcorder();
 					C206_CaseStudy.addCamcorder(camcorderList, cc);
 					System.out.println("Camcorder added");
+					
+					C206_CaseStudy.addMenu(foodOpt , drinkOpt , fruitOpt);
 
 				} else if (itemType == 2) {
 					// Add Chromebook
@@ -53,6 +55,8 @@ public class C206_CaseStudy {
 					C206_CaseStudy.addChromebook(chromebookList, cb);
 					System.out.println("Chromebook added");
 
+					
+					
 				} else {
 					System.out.println("Invalid type");
 				}
