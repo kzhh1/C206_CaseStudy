@@ -7,6 +7,13 @@
  * 21021860, 10 Aug 2022 2:29:32 pm
  */
 
-public class monthlymenu {
+public class monthlymenu extends menu{
+	
+	public monthlymenu(String menuset, String drink, String fruit) {
+		super(menuset, drink, fruit);
+		// TODO Auto-generated constructor stub
+		
+		
+	}
 
 }
