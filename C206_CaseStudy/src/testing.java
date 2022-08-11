@@ -1,4 +1,4 @@
 
 public class testing {
- hello
+	public String Hello;
 }
