@@ -9,4 +9,8 @@
 
 public class orderbill {
 
+    private String menuset;
+    private String drink;
+    private String fruit;
+	
 }
