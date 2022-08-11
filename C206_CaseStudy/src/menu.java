@@ -12,32 +12,21 @@ public class menu{
     private String menuset;
     private String drink;
     private String fruit;
-	/**
-	 * @param menuset
-	 * @param drink
-	 * @param fruit
-	 */
+	
 	public menu(String menuset, String drink, String fruit) {
-		super();
 		this.menuset = menuset;
 		this.drink = drink;
 		this.fruit = fruit;
 	}
-	/**
-	 * @return the menuset
-	 */
+	
 	public String getMenuset() {
 		return menuset;
 	}
-	/**
-	 * @return the drink
-	 */
+	
 	public String getDrink() {
 		return drink;
 	}
-	/**
-	 * @return the fruit
-	 */
+	
 	public String getFruit() {
 		return fruit;
 	}
