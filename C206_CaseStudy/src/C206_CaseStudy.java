@@ -183,9 +183,7 @@ public class C206_CaseStudy {
 	}
 	public static void viewMenuSet(ArrayList<menuSet> MenuSetList) {
 		C206_CaseStudy.setHeader("MENUSET ITEMS");
-		Helper.line(80, "-");
-		String output = String.format("%-10s\n", "FOODITEMS");
-		 output += retrieveMenuSet(MenuSetList);	
+		String output = retrieveMenuSet(MenuSetList);	
 		System.out.println(output);
 		
 	}
@@ -202,16 +200,13 @@ public class C206_CaseStudy {
 	
 	public static void viewDrinks(ArrayList<drinks> drinkList) {
 		C206_CaseStudy.setHeader("DRINK ITEMS");
-		Helper.line(80, "-");
-		String output = String.format("%-10s\n", "DRINK ITEMS");
-		 output += retrieveDrinks(drinkList);	
+		String output = retrieveDrinks(drinkList);	
 		System.out.println(output);
 		
 	}
 	
 	public static String retrieveFruits(ArrayList<fruits> fruitList) {
 		String output = "";
-
 		for (int i = 0; i < fruitList.size(); i++) {
 
 			output += String.format("%-10s\n", fruitList.get(i).getFruit());
@@ -220,10 +215,8 @@ public class C206_CaseStudy {
 	}
 	
 	public static void viewFruits(ArrayList<fruits> fruitList) {
-		C206_CaseStudy.setHeader("DRINK ITEMS");
-		Helper.line(80, "-");
-		String output = String.format("%-10s\n", "DRINK ITEMS");
-		 output += retrieveFruits(fruitList);	
+		C206_CaseStudy.setHeader("FRUIT ITEMS");
+		String output = retrieveFruits(fruitList);	
 		System.out.println(output);
 	}
 	
