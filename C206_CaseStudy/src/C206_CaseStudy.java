@@ -53,7 +53,7 @@ public class C206_CaseStudy {
 				
 
 //				if (foodOpt == 1) {
-//					// Add a camcorder
+//					// Add a 
 //					 cc = inputCamcorder();
 //					C206_CaseStudy.addCamcorder(camcorderList, cc);
 //					System.out.println("Camcorder added");
@@ -185,7 +185,6 @@ public class C206_CaseStudy {
 		C206_CaseStudy.setHeader("MENUSET ITEMS");
 		String output = retrieveMenuSet(MenuSetList);	
 		System.out.println(output);
-		
 	}
 	
 	public static String retrieveDrinks(ArrayList<drinks> drinkList) {
