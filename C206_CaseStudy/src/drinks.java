@@ -1,13 +1,13 @@
 
 public class drinks {
-    private String drink;
+    private String drinks;
 
-	public drinks(String drink) {
-  
+	public drinks(String drinks) {
+		this.drinks = drinks;
 	}
 
 	public String getDrink() {
-		return drink;
+		return drinks;
 
 }
 }
