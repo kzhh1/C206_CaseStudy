@@ -17,14 +17,6 @@ public class LunchBoxOrder { // Committed by Hui
 	public String getOrdID() {
 		return ordID;
 	}
-
-<<<<<<< HEAD
-=======
-	public String getDate() {
-		return date;
-	}
-
->>>>>>> branch 'master' of https://github.com/kzhh1/C206_CaseStudy.git
 	public String getMenuset() {
 		return menuset;
 	}
