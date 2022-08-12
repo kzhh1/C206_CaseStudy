@@ -1,26 +1,11 @@
 
 public class fruits {
-    private String Watermelon;
-    private String Strawberry;
-    private String Mango;
-    
-    public fruits(String watermelon, String strawberry, String mango) {
-		super();
-		Watermelon = watermelon;
-		Strawberry = strawberry;
-		Mango = mango;
-	}
+    private String fruit;
 
-	public String getWatermelon() {
-		return Watermelon;
+	public fruits(String fruit) {
+		this.fruit = fruit;
 	}
-
-	public String getStrawberry() {
-		return Strawberry;
+		public String getFruit() {
+		return fruit;
 	}
-
-	public String getMango() {
-		return Mango;
-	}
-	
 }
