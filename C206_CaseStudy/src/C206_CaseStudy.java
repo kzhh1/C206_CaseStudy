@@ -247,10 +247,12 @@ public class C206_CaseStudy {
 		}
 		return output;
 	}
-	public static void viewLunchBOrder(ArrayList<LunchBoxOrder> lbList) {
+	public static void viewLunchBoxOrder(ArrayList<LunchBoxOrder> lbList) {
 		C206_CaseStudy.setHeader("Lunch Box Order ITEMS");
 		String output = retrieveLunchBoxOrder(lbList);	
 		System.out.println(output);
+	}
+	
 }
 
 	
@@ -410,7 +412,9 @@ public class C206_CaseStudy {
 //		} else {
 //			System.out.println("Chromebook " + tag + " returned");
 //		}
-//	}
-//
+
+	//}
+
+
 }
 	
