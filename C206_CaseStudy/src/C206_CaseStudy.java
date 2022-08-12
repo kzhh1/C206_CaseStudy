@@ -4,8 +4,6 @@ public class C206_CaseStudy {
 
 	public static void main(String[] args) {
 
-		//Cheng Hui Hui
-		//Friends
 		// TODO Auto-generated method stub
 		ArrayList<User> UserList = new ArrayList<User>() ; 
 		ArrayList<menuSet> menuSetList = new ArrayList<menuSet>() ;
@@ -18,7 +16,7 @@ public class C206_CaseStudy {
 // Menu :
 		menuSetList.add(new menuSet("Chicken Chop"));
 		menuSetList.add(new menuSet("Chicken Curry"));
-		menuSetList.add(new menuSet("Vegetarian food"));
+		menuSetList.add(new menuSet("Vegetarian beehoon"));
 		drinkList.add(new drinks("Bandung"));
 		drinkList.add(new drinks("Water"));
 		drinkList.add(new drinks("Teh"));
@@ -47,24 +45,21 @@ public class C206_CaseStudy {
 				
 				// View all LunchBoxOrder
 				C206_CaseStudy.viewLunchBoxOrder(lbOrderList);
-				
-				
-//				
+							
 
 			} else if (option == 2) {
-				// Add a new item
+				// Add/place lunch box order 
 				
-				foodMenu();
-				int foodOpt = Helper.readInt("Enter option to select food option > ");
-//				if(foodOpt == 1) {
-//					Camcorder cc = inputCamcorder();
-//					ResourceCentre.addCamcorder(camcorderList, cc);
-//				}
+				C206_CaseStudy.setHeader("ADD") ; 
+				C206_CaseStudy.setHeader("MENU ITEMS") ; 
 				
-				drinkMenu();
-				int drinkOpt = Helper.readInt("Enter option to select drink option  > ");
-				fruitMenu();
-				int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
+				//String orderId = Helper.readString("Enter order ID > ");
+				// ^ uncomment if we doing a if else , if (orderID.contains(
+				
+				LunchBoxOrder lbOrd = inputLunchBoxOrder() ; 
+				C206_CaseStudy.addLunchBoxOrder(lbOrderList , lbOrd) ; 
+				System.out.println("Lunch Box Order has been placed");
+				
 			}
 		}
 		
@@ -173,7 +168,7 @@ public class C206_CaseStudy {
 	}
 	
 	public static void setHeader(String header) {
-		Helper.line(80, "-");
+		Helper.line(30, "-");
 		System.out.println(header);
 		Helper.line(30, "-");
 	}
@@ -256,6 +251,34 @@ public class C206_CaseStudy {
 		String output = retrieveLunchBoxOrder(lbOrderList);	
 		System.out.println(output);
 	}
+	
+	//================================= Option 2 Add an item (CRUD - Create) =================================
+	public static LunchBoxOrder inputLunchBoxOrder() { 
+		
+		String ordID = Helper.readString("Enter ordID > ") ;
+		String menuSet = Helper.readString("Enter menuSet > ") ;
+		
+		if (menuSet.equalsIgnoreCase("Western")) { 
+			menuSet = "Chicken Chop" ;
+		} else if (menuSet.equalsIgnoreCase("Asian")) { 
+			menuSet = "Chicken Curry" ;
+		} else if (menuSet.equalsIgnoreCase("Vegetarian")) { 
+			menuSet = "Vegetarian Beehoon" ;
+		} else { 
+			System.out.println("menuSet does not exist. Please choose again!!");
+		}
+		
+		String drink = Helper.readString("Enter drink > ") ;
+		String fruit = Helper.readString("Enter fruits > ") ;
+		
+		
+		LunchBoxOrder lbOrd = new LunchBoxOrder(ordID , menuSet , drink , fruit) ;
+		return lbOrd ; 
+	}
+	public static void addLunchBoxOrder (ArrayList<LunchBoxOrder> lbOrdList , LunchBoxOrder lbOrd ) { 
+		lbOrdList.add(lbOrd) ; 
+	}
+	
 	
 
 	
