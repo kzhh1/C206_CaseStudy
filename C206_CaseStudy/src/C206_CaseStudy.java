@@ -46,7 +46,7 @@ public class C206_CaseStudy {
 				C206_CaseStudy.viewFruits(fruitList);
 				
 				// View all LunchBoxOrder
-				C206_CaseStudy.viewLunchBOrder(lbOrderList);
+				C206_CaseStudy.viewLunchBoxOrder(lbOrderList);
 				
 				
 //				
@@ -67,6 +67,8 @@ public class C206_CaseStudy {
 				int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
 			}
 		}
+		
+	}
 				
 
 //				if (foodOpt == 1) {
@@ -239,21 +241,22 @@ public class C206_CaseStudy {
 
 	
 // LunchBoxOrder ITEMS 
-	public static String retrieveLunchBoxOrder(ArrayList<LunchBoxOrder> lbList) {
+	public static String retrieveLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList) {
 		String output = "";
 
-		for (int i = 0; i < lbList.size(); i++) { 
-			output += String.format("%%-10s %-30s %-10s %-10s  \n", lbList.get(i).getOrdID() , lbList.get(i).getMenuset() , lbList.get(i).getDrink() , lbList.get(i).getFruit() );
+		for (int i = 0; i < lbOrderList.size(); i++) { 
+			output += String.format("%-10s %-30s %-10s %-10s\n", lbOrderList.get(i).getOrdID() , lbOrderList.get(i).getMenuset() , lbOrderList.get(i).getDrink() , lbOrderList.get(i).getFruit() );
 		}
 		return output;
 	}
-	public static void viewLunchBoxOrder(ArrayList<LunchBoxOrder> lbList) {
+	public static void viewLunchBoxOrder(ArrayList <LunchBoxOrder> lbOrderList) {
 		C206_CaseStudy.setHeader("Lunch Box Order ITEMS");
-		String output = retrieveLunchBoxOrder(lbList);	
+		String output = retrieveLunchBoxOrder(lbOrderList);	
 		System.out.println(output);
 	}
 	
-}
+
+
 
 	
 
