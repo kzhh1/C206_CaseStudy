@@ -247,8 +247,10 @@ public class C206_CaseStudy {
 		for (int i = 0; i < lbOrderList.size(); i++) { 
 			output += String.format("%-10s %-20s %-10s %-10s\n", lbOrderList.get(i).getOrdID() , lbOrderList.get(i).getMenuset() , lbOrderList.get(i).getDrink() , lbOrderList.get(i).getFruit() );
 		}
+		
 		return output;
 	}
+	
 	public static void viewLunchBoxOrder(ArrayList <LunchBoxOrder> lbOrderList) {
 		C206_CaseStudy.setHeader("Lunch Box Order ITEMS");
 		String output = retrieveLunchBoxOrder(lbOrderList);	
