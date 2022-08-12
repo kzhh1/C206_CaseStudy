@@ -2,9 +2,7 @@ import java.util.ArrayList;
 public class C206_CaseStudy {
 
 	public static void main(String[] args) {
-
-		//Cheng Hui Hui
-		//Friends
+		
 		// TODO Auto-generated method stub
 		ArrayList<User> UserList = new ArrayList<User>() ; 
 		ArrayList<menuSet> menuSetList = new ArrayList<menuSet>() ;
@@ -14,7 +12,7 @@ public class C206_CaseStudy {
 		ArrayList<orderbill> orderList = new ArrayList<orderbill>();
 		ArrayList<monthlymenu> monthlyList = new ArrayList<monthlymenu>(); 
 
-// Menu :
+		// Menu :
 		menuSetList.add(new menuSet("Chicken Chop"));
 		menuSetList.add(new menuSet("Chicken Curry"));
 		menuSetList.add(new menuSet("Vegetarian food"));
@@ -47,24 +45,24 @@ public class C206_CaseStudy {
 				// View all LunchBoxOrder
 				C206_CaseStudy.viewLunchBoxOrder(lbOrderList);
 				
-				
-//				
 
 			} else if (option == 2) {
 				// Add a new item
-				
 				foodMenu();
 				int foodOpt = Helper.readInt("Enter option to select food option > ");
-//				if(foodOpt == 1) {
-//					Camcorder cc = inputCamcorder();
-//					ResourceCentre.addCamcorder(camcorderList, cc);
-//				}
-				
 				drinkMenu();
 				int drinkOpt = Helper.readInt("Enter option to select drink option  > ");
 				fruitMenu();
 				int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
+			
+			} else if(option == 3) {
+				
+				
 			}
+			
+			
+			
+			
 		}
 		
 	}
@@ -242,11 +240,6 @@ public class C206_CaseStudy {
 // LunchBoxOrder ITEMS 
 	public static String retrieveLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList) {
 		String output = String.format("%-10s %-20s %-10s %-10s\n", "Order ID" , "Menu Set" , "Drink" , "Fruit");
-<<<<<<< HEAD
-
-=======
-
->>>>>>> branch 'master' of https://github.com/kzhh1/C206_CaseStudy
 		for (int i = 0; i < lbOrderList.size(); i++) { 
 			output += String.format("%-10s %-20s %-10s %-10s\n", lbOrderList.get(i).getOrdID() , lbOrderList.get(i).getMenuset() , lbOrderList.get(i).getDrink() , lbOrderList.get(i).getFruit() );
 		}
@@ -260,15 +253,5 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 	
-
-<<<<<<< HEAD
-
-
-	
-
 	
 }
-=======
-	
-}
->>>>>>> branch 'master' of https://github.com/kzhh1/C206_CaseStudy
