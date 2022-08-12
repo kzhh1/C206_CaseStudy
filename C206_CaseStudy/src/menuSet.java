@@ -1,26 +1,15 @@
 
 public class menuSet {
-	private String Western;
-    private String Asian;
-    private String Vegeterian;
+	private String menuItem;
 
-	public menuSet(String western, String asian, String vegeterian) {
-		super();
-		Western = western;
-		Asian = asian;
-		Vegeterian = vegeterian;
-	}
-    
-	public String getWestern() {
-		return Western;
+	public String getMenuItem() {
+		return menuItem;
 	}
 
-	public String getAsian() {
-		return Asian;
+	public menuSet(String menuItem) {
+		this.menuItem = menuItem;
 	}
 
-	public String getVegeterian() {
-		return Vegeterian;
-	}
+
 
 }

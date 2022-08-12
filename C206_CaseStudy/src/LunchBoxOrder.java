@@ -1,30 +1,35 @@
 
 public class LunchBoxOrder { // Committed by Hui
 	
-	private int ordID ; 
-	private String ordDesc ; // order Description
-	private String date ; // order Date
+	private String ordID ; // based on order no
+    private String menuset;
+    private String drink;
+    private String fruit;
 	
-	
-	public LunchBoxOrder(int ordID, String ordDesc, String date) {
+	public LunchBoxOrder(String ordID, String menuset, String drink, String fruit) {
 		super();
 		this.ordID = ordID;
-		this.ordDesc = ordDesc;
-		this.date = date;
+		this.menuset = menuset;
+		this.drink = drink;
+		this.fruit = fruit;
 	}
 
-
-	public int getOrdID() {
+	public String getOrdID() {
 		return ordID;
 	}
 
-	public String getOrdDesc() {
-		return ordDesc;
+	public String getMenuset() {
+		return menuset;
 	}
 
-	public String getDate() {
-		return date;
+	public String getDrink() {
+		return drink;
 	}
+
+	public String getFruit() {
+		return fruit;
+	}
+
 	
 	
 }

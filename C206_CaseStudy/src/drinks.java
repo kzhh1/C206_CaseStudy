@@ -1,25 +1,13 @@
 
 public class drinks {
-    private String Bandung;
-    private String Coffee;
-    private String Milo;
-    
-	public drinks(String bandung, String coffee, String milo) {
-		super();
-		Bandung = bandung;
-		Coffee = coffee;
-		Milo = milo;
+    private String drinks;
+
+	public drinks(String drinks) {
+		this.drinks = drinks;
 	}
 
-	public String getBandung() {
-		return Bandung;
-	}
+	public String getDrink() {
+		return drinks;
 
-	public String getCoffee() {
-		return Coffee;
-	}
-
-	public String getMilo() {
-		return Milo;
-	}
+}
 }
