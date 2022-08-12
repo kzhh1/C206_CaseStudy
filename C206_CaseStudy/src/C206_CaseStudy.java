@@ -242,7 +242,7 @@ public class C206_CaseStudy {
 	public static String retrieveLunchBoxOrder(ArrayList<LunchBoxOrder> lbList) {
 		String output = "";
 
-		for (int i = 0; i < lbList.size(); i++) {
+		for (int i = 0; i < lbList.size(); i++) { 
 			output += String.format("%%-10s %-30s %-10s %-10s  \n", lbList.get(i).getOrdID() , lbList.get(i).getMenuset() , lbList.get(i).getDrink() , lbList.get(i).getFruit() );
 		}
 		return output;
