@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 public class C206_CaseStudy {
 
 	public static void main(String[] args) {
@@ -15,6 +14,7 @@ public class C206_CaseStudy {
 		ArrayList<orderbill> orderList = new ArrayList<orderbill>();
 		ArrayList<monthlymenu> monthlyList = new ArrayList<monthlymenu>(); 
 
+// Menu :
 		menuSetList.add(new menuSet("Chicken Chop"));
 		menuSetList.add(new menuSet("Chicken Curry"));
 		menuSetList.add(new menuSet("Vegetarian food"));
@@ -24,8 +24,13 @@ public class C206_CaseStudy {
 		fruitList.add(new fruits("Watermelon"));
 		fruitList.add(new fruits("Mango"));
 		fruitList.add(new fruits("Strawberry"));
-		
 
+		
+// LunchBoxOrder : 
+		lbOrderList.add(new LunchBoxOrder("lb001" , "Chicken Chop" , "Bandung" , "Mango")) ;
+		lbOrderList.add(new LunchBoxOrder("lb002" , "chicken Curry" , "Teh" , "Watermelon")) ; 
+
+		
 		int option = 0;
 
 		while (option != 5) {
@@ -38,6 +43,11 @@ public class C206_CaseStudy {
 				C206_CaseStudy.viewMenuSet(menuSetList);
 				C206_CaseStudy.viewDrinks(drinkList);
 				C206_CaseStudy.viewFruits(fruitList);
+				
+				// View all LunchBoxOrder
+				C206_CaseStudy.viewLunchBoxOrder(lbOrderList);
+				
+				
 //				
 
 			} else if (option == 2) {
@@ -45,10 +55,10 @@ public class C206_CaseStudy {
 				
 				foodMenu();
 				int foodOpt = Helper.readInt("Enter option to select food option > ");
-				if(foodOpt == 1) {
-					Camcorder cc = inputCamcorder();
-					ResourceCentre.addCamcorder(camcorderList, cc);
-				}
+//				if(foodOpt == 1) {
+//					Camcorder cc = inputCamcorder();
+//					ResourceCentre.addCamcorder(camcorderList, cc);
+//				}
 				
 				drinkMenu();
 				int drinkOpt = Helper.readInt("Enter option to select drink option  > ");
@@ -56,6 +66,7 @@ public class C206_CaseStudy {
 				int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
 			}
 		}
+		
 	}
 				
 
@@ -163,7 +174,7 @@ public class C206_CaseStudy {
 	public static void setHeader(String header) {
 		Helper.line(80, "-");
 		System.out.println(header);
-		Helper.line(80, "-");
+		Helper.line(30, "-");
 	}
 
 	public static String showAvailability(boolean isAvailable) {
@@ -179,6 +190,7 @@ public class C206_CaseStudy {
 
 	//================================= Option 1 View (CRUD - Read) =================================
 	
+//MenuItems
 	public static String retrieveMenuSet(ArrayList<menuSet> menuSetList) {
 		String output = "";
 
@@ -225,164 +237,29 @@ public class C206_CaseStudy {
 		String output = retrieveFruits(fruitList);	
 		System.out.println(output);
 	}
+
+	
+// LunchBoxOrder ITEMS 
+	public static String retrieveLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList) {
+		String output = String.format("%-10s %-20s %-10s %-10s\n", "Order ID" , "Menu Set" , "Drink" , "Fruit");
+
+		for (int i = 0; i < lbOrderList.size(); i++) { 
+			output += String.format("%-10s %-20s %-10s %-10s\n", lbOrderList.get(i).getOrdID() , lbOrderList.get(i).getMenuset() , lbOrderList.get(i).getDrink() , lbOrderList.get(i).getFruit() );
+		}
+		
+		return output;
+	}
+	
+	public static void viewLunchBoxOrder(ArrayList <LunchBoxOrder> lbOrderList) {
+		C206_CaseStudy.setHeader("Lunch Box Order ITEMS");
+		String output = retrieveLunchBoxOrder(lbOrderList);	
+		System.out.println(output);
+	}
 	
 
-	//================================= Option 2 Add (CRUD - Create)=================================
-	public static Camcorder inputCamcorder() {
-		String tag = Helper.readString("Enter asset tag > ");
-		String description = Helper.readString("Enter description > ");
-		int zoom = Helper.readInt("Enter optical zoom > ");
 
-		Camcorder cc= new Camcorder(tag, description, zoom);
-		return cc;
-		
-	}
-	public static void addCamcorder(ArrayList<Camcorder> camcorderList, Camcorder cc) {
-		
-		camcorderList.add(cc);
-		
-	}
 
-=======
-//	
-//	public static Chromebook inputChromebook() {
-//		String tag = Helper.readString("Enter asset tag > ");
-//		String description = Helper.readString("Enter description > ");
-//		String os = Helper.readString("Enter operating system > ");
-//
-//		Chromebook cb= new Chromebook(tag, description, os);
-//		return cb;
-//		
-//	}	
-//	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
-//
-//		chromebookList.add(cb);
-//		
-//	}
-//	
-//	//================================= Option 3 Loan (CURD- Update) =================================
-//	public static boolean doLoanCamcorder(ArrayList<Camcorder> camcorderList, String tag, String dueDate) {
-//		
-//		boolean isLoaned = false;
-//
-//		for (int i = 0; i < camcorderList.size(); i++) {
-//			
-//			
-//			if (tag.equalsIgnoreCase(camcorderList.get(i).getAssetTag())				
-//					&& camcorderList.get(i).getIsAvailable() == true) {
-//				
-//				camcorderList.get(i).setIsAvailable(false);
-//				camcorderList.get(i).setDueDate(dueDate);
-//				
-//				isLoaned = true;
-//				
-//			}
-//		}
-//		return isLoaned;
-//	}
-//
-//	public static void loanCamcorder(ArrayList<Camcorder> camcorderList) {
-//		C206_CaseStudy.viewAllCamcorder(camcorderList);
-//		String tag = Helper.readString("Enter asset tag > ");
-//		String due = Helper.readString("Enter due date > ");
-//		Boolean isLoaned =doLoanCamcorder(camcorderList, tag, due);
-//		if (isLoaned == false) {
-//			System.out.println("Invalid asset tag");
-//		} else {
-//			System.out.println("Camcorder " + tag + " loaned out");
-//		}
-//	}
-//	
-//
-//	public static boolean doLoanChromebook(ArrayList<Chromebook> chromebookList, String tag, String dueDate) {
-//		// comments: write your code here
-//		boolean isLoaned = false;
-//
-//		for (int i = 0; i < chromebookList.size(); i++) {
-//
-//			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
-//					
-//					&& chromebookList.get(i).getIsAvailable() == true) {
-//				
-//				chromebookList.get(i).setIsAvailable(false);
-//				chromebookList.get(i).setDueDate(dueDate);
-//				
-//				isLoaned = true;
-//				
-//			}
-//		}
-//		return isLoaned;
-//	}
-//
-//	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
-//		// write your code here
-//		C206_CaseStudy.viewAllChromebook(chromebookList);
-//		String tag = Helper.readString("Enter asset tag > ");
-//		String due = Helper.readString("Enter due date > ");
-//		Boolean isLoaned =doLoanChromebook(chromebookList, tag, due);
-//		if (isLoaned == false) {
-//			System.out.println("Invalid asset tag");
-//		} else {
-//			System.out.println("Chromebook " + tag + " loaned out");
-//		}	
-//		
-//	}
-//	//================================= Option 4 Return (CURD- Update)=================================
-//	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag) {
-//		boolean isReturned = false;
-//
-//		for (int i = 0; i < camcorderList.size(); i++) {
-//			if (tag.equalsIgnoreCase(camcorderList.get(i).getAssetTag())
-//					&& camcorderList.get(i).getIsAvailable() == false) {
-//				camcorderList.get(i).setIsAvailable(true);
-//				camcorderList.get(i).setDueDate("");
-//				isReturned = true;
-//				
-//			}
-//		}
-//		return isReturned;
-//		
-//	}
-//
-//	public static void returnCamcorder(ArrayList<Camcorder> camcorderList) {
-//		C206_CaseStudy.viewAllCamcorder(camcorderList);
-//		String tag = Helper.readString("Enter asset tag > ");
-//		Boolean isReturned = doReturnCamcorder(camcorderList, tag);
-//		
-//		if (isReturned == false) {
-//			System.out.println("Invalid asset tag");
-//		} else {
-//			System.out.println("Camcorder " + tag + " returned");
-//		}
-//	}
-//	// write your doReturnChromebook code here
-//	public static boolean doReturnChromebook(ArrayList<Chromebook> chromebookList,String tag) {
-//		boolean isReturned = false;
-//
-//		for (int i = 0; i < chromebookList.size(); i++) {
-//			if (tag.equalsIgnoreCase(chromebookList.get(i).getAssetTag())
-//					&& chromebookList.get(i).getIsAvailable() == false) {
-//				chromebookList.get(i).setIsAvailable(true);
-//				chromebookList.get(i).setDueDate("");
-//				isReturned = true;
-//				
-//			}
-//		}
-//		return isReturned;
-//		
-//	}
-//	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
-//		// write your code here
-//		C206_CaseStudy.viewAllChromebook(chromebookList);
-//		String tag = Helper.readString("Enter asset tag > ");
-//		Boolean isReturned = doReturnChromebook(chromebookList, tag);
-//		
-//		if (isReturned == false) {
-//			System.out.println("Invalid asset tag");
-//		} else {
-//			System.out.println("Chromebook " + tag + " returned");
-//		}
-//	}
-//
+	
 
-	}
+	
+}
