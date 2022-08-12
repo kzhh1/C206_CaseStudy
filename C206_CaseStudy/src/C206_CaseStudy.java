@@ -1,18 +1,19 @@
 import java.util.ArrayList;
+
 public class C206_CaseStudy {
 
 	public static void main(String[] args) {
 
-		// TODO Auto-generated method stub
-		ArrayList<User> UserList = new ArrayList<User>() ; 
-		ArrayList<menuSet> menuSetList = new ArrayList<menuSet>() ;
-		ArrayList<drinks> drinkList = new ArrayList<drinks>() ; 
-		ArrayList<fruits> fruitList = new ArrayList<fruits>() ; 
-		ArrayList<LunchBoxOrder> lbOrderList = new ArrayList<LunchBoxOrder>();
+		
+		ArrayList<User> UserList = new ArrayList<User>();
+		ArrayList<menuSet> menuSetList = new ArrayList<menuSet>(); 
+		ArrayList<drinks> drinkList = new ArrayList<drinks>(); 
+		ArrayList<fruits> fruitList = new ArrayList<fruits>(); 
+		ArrayList<LunchBoxOrder> lbOrderList = new ArrayList<LunchBoxOrder>(); 
 		ArrayList<orderbill> orderList = new ArrayList<orderbill>();
-		ArrayList<monthlymenu> monthlyList = new ArrayList<monthlymenu>(); 
+		ArrayList<monthlymenu> monthlyList = new ArrayList<monthlymenu>();
 
-		// Menu :
+	// Menu :
 		menuSetList.add(new menuSet("Chicken Chop"));
 		menuSetList.add(new menuSet("Chicken Curry"));
 		menuSetList.add(new menuSet("Vegetarian beehoon"));
@@ -24,170 +25,196 @@ public class C206_CaseStudy {
 		fruitList.add(new fruits("Strawberry"));
 
 		
-// LunchBoxOrder : 
-		lbOrderList.add(new LunchBoxOrder("lb001" , "Chicken Chop" , "Bandung" , "Mango")) ;
-		lbOrderList.add(new LunchBoxOrder("lb002" , "chicken Curry" , "Teh" , "Watermelon")) ; 
+	// LunchBoxOrder : 
+		lbOrderList.add(new LunchBoxOrder("lb001", "Chicken Chop", "Bandung", "Mango"));
+		lbOrderList.add(new LunchBoxOrder("lb002", "chicken Curry", "Teh", "Watermelon"));
 
-		
 		int option = 0;
 
 		while (option != 5) {
 
-			C206_CaseStudy.menu();
+			C206_CaseStudy.mainMenu();
 			option = Helper.readInt("Enter an option > ");
 
 			if (option == 1) {
-				// View all items
-				C206_CaseStudy.viewMenuSet(menuSetList);
-				C206_CaseStudy.viewDrinks(drinkList);
-				C206_CaseStudy.viewFruits(fruitList);
+				C206_CaseStudy.menu();
+				int menuOpt = Helper.readInt("Enter sub option > ") ;
 				
-				// View all LunchBoxOrder
-				C206_CaseStudy.viewLunchBoxOrder(lbOrderList);
-
-
+		// Chin Wei Code :
+				
+				if (menuOpt == 1) { 
+					// View - 
+					
+				} else if (menuOpt == 2 ) { 
+					// Add - 
+					
+				} else if (menuOpt == 3 ) { 
+					// Delete -
+					
+				} else if (menuOpt == 4) {
+					System.out.println("Bye!");
+				} else {
+					System.out.println("Invalid option");
+				}	
+					
+					
+				
 			} else if (option == 2) {
-
-				// Add/place lunch box order 
+				C206_CaseStudy.menu();
+				int menuOpt = Helper.readInt("Enter sub option > ") ;
 				
-				C206_CaseStudy.setHeader("ADD") ; 
-				C206_CaseStudy.setHeader("MENU ITEMS") ; 
+		// Desmond AND Zhen hong's Code :
 				
-				//String orderId = Helper.readString("Enter order ID > ");
+				if (menuOpt == 1) {
+					// View all items :
+					C206_CaseStudy.viewMenuSet(menuSetList);
+					C206_CaseStudy.viewDrinks(drinkList);
+					C206_CaseStudy.viewFruits(fruitList);
+				} else if (menuOpt == 2) { 
+					// Add - 
+//					possible way
+//					foodMenu();
+//					int foodOpt = Helper.readInt("Enter option to select food option > ");
+//					drinkMenu();
+//					int drinkOpt = Helper.readInt("Enter option to select drink option  > ");
+//					fruitMenu();
+//					int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
+				} else if (menuOpt == 3 ) { 
+					// Delete -
+					
+				} else if (menuOpt == 4) {
+					System.out.println("Bye!");
+				} else {
+					System.out.println("Invalid option");
+				}	
+				
+				
+				
+			} else if (option == 3) {
+				C206_CaseStudy.menu();
+				int menuOpt = Helper.readInt("Enter sub option > ") ;
+				
+		// Hui Hui Code :
+				
+				if (menuOpt == 1) { 
+					// View all LunchBoxOrder :
+					C206_CaseStudy.viewLunchBoxOrder(lbOrderList);
+					
+				} else if (menuOpt == 2 ) { 
+					// Add/place lunch box order : 
+					LunchBoxOrder lbOrd = inputLunchBoxOrder(lbOrderList, menuSetList);
+					C206_CaseStudy.addLunchBoxOrder(lbOrderList, lbOrd);
+					System.out.println("Lunch Box Order has been placed");
+					
+				} else if (menuOpt == 3 ) { 
+					// Delete - 
+					
+					
+				} else if (menuOpt == 4) {
+					System.out.println("Bye!");
+				} else {
+					System.out.println("Invalid option");
+				}
+				
+				// String orderId = Helper.readString("Enter order ID > ");
 				// ^ uncomment if we doing a if else , if (orderID.contains(
-				
-				LunchBoxOrder lbOrd = inputLunchBoxOrder() ; 
-				C206_CaseStudy.addLunchBoxOrder(lbOrderList , lbOrd) ; 
-				System.out.println("Lunch Box Order has been placed");
+					
 
-				// Add a new item
-				foodMenu();
-				int foodOpt = Helper.readInt("Enter option to select food option > ");
-				drinkMenu();
-				int drinkOpt = Helper.readInt("Enter option to select drink option  > ");
-				fruitMenu();
-				int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
-			
-			} else if(option == 3) {
-			
 				
+				
+			} else if (option == 4) {
+				C206_CaseStudy.menu();
+				int menuOpt = Helper.readInt("Enter sub option > ") ;
+				
+		// Shi Hao Code : 
+				
+				if (menuOpt == 1) { 
+					// View - 
+					
+				} else if (menuOpt == 2 ) { 
+					// Add - 
+					
+				} else if (menuOpt == 3 ) { 
+					// Delete -
+					
+				} else if (menuOpt == 4) {
+					System.out.println("Bye!");
+				} else {
+					System.out.println("Invalid option");
+				}
+				
+				
+				
+				
+			} else if (option == 5) {
+				System.out.println("Bye!");
+			} else {
+				System.out.println("Invalid Option Entered!");
 			}
 			
-			
-			
-			
-		}
-		
-	}
-				
+		}// end of while loop 
 
-//				if (foodOpt == 1) {
-//					// Add a 
-//					 cc = inputCamcorder();
-//					C206_CaseStudy.addCamcorder(camcorderList, cc);
-//					System.out.println("Camcorder added");
-//					
-//					C206_CaseStudy.addMenu(foodOpt , drinkOpt , fruitOpt);
-//
-//				} else if (itemType == 2) {
-//					// Add Chromebook
-//					Chromebook cb = inputChromebook();
-//					C206_CaseStudy.addChromebook(chromebookList, cb);
-//					System.out.println("Chromebook added");
-//
-//					
-//					
-//				} else {
-//					System.out.println("Invalid type");
-//				}
-//
-//			} else if (option == 3) {
-//				// Loan item
-//				C206_CaseStudy.setHeader("LOAN");			
-//				C206_CaseStudy.setHeader("ITEM TYPES");
-//				System.out.println("1. Camcorder");
-//				System.out.println("2. Chromebook");
-//				
-//				int itemType = Helper.readInt("Enter option to select item type > ");
-//
-//				if (itemType == 1) {
-//					// Loan camcorderC206_CaseStudy
-//					C206_CaseStudy.loanCamcorder(camcorderList);
-//				} else if (itemType == 2) {
-//					// Loan Chromebook
-//					C206_CaseStudy.loanChromebook(chromebookList);
-//				} else {
-//					System.out.println("Invalid type");
-//				}e
-//
-//			} else if (option == 4) {
-//				// Return item
-//				C206_CaseStudy.setHeader("RETURN");				
-//				C206_CaseStudy.setHeader("ITEM TYPES");
-//				System.out.println("1. Camcorder");
-//				System.out.println("2. Chromebook");
-//				
-//				int itemType = Helper.readInt("Enter option to select item type > ");
-//				if (itemType == 1) {
-//					// Return camcorder
-//					C206_CaseStudy.returnCamcorder(camcorderList);
-//				} else if (itemType == 2) {
-//					// Return Chromebook
-//					C206_CaseStudy.returnChromebook(chromebookList);
-//				} else {
-//					System.out.println("Invalid type");
-//				}
-//
-//			} else if (option == 5) {
-//				System.out.println("Bye!");
-//			} else {
-//				System.out.println("Invalid option");
-//			}
-//
-//		}
-//
-//	}
+	}
+
+	
+	public static void mainMenu() {
+		C206_CaseStudy.setHeader("LUNCHBOX MANAGEMENT SYSTEM");
+		System.out.println("1. Maintain User Accounts");
+		System.out.println("2. Maintain Menu/Monthly Item Details");
+		System.out.println("3. Maintain Lunch Box Order Details");
+		System.out.println("4. Maintain Order Bill Details");
+		System.out.println("5. Quit");
+		Helper.line(50, "-");
+	}
 
 	public static void menu() {
-		C206_CaseStudy.setHeader("MENU SET");
+		C206_CaseStudy.setHeader("MENU OPTIONS");
 		System.out.println("1. Display menu");
 		System.out.println("2. Add MenuSet");
-		System.out.println("3. ");
-		System.out.println("4. ");
-		System.out.println("5. Quit");
-		Helper.line(80, "-");
-
+		System.out.println("3. Delete ");
+		System.out.println("4. Quit");
 	}
+
+// For Menu and monthly Menu :
 	public static void foodMenu() {
 		C206_CaseStudy.setHeader("Food Menu");
-		System.out.println("1.Chicken Chop");
-		System.out.println("2.Chicken Curry");
-		System.out.println("3.Vegeterian BeeHoon");
+		System.out.println("1. Chicken Chop");
+		System.out.println("2. Chicken Curry");
+		System.out.println("3. Vegeterian BeeHoon");
 		Helper.line(80, "-");
-
 	}
 	public static void drinkMenu() {
 		C206_CaseStudy.setHeader("Drinks Menu");
-		System.out.println("1.Bandung");
-		System.out.println("2.Water");
-		System.out.println("3.Teh");
+		System.out.println("1. Bandung");
+		System.out.println("2. Water");
+		System.out.println("3. Teh");
 		Helper.line(80, "-");
 	}
-	
 	public static void fruitMenu() {
 		C206_CaseStudy.setHeader("Fruits Menu");
-		System.out.println("1.Watermelon");
-		System.out.println("2.Strawberry");
-		System.out.println("3.Mango");
+		System.out.println("1. Watermelon");
+		System.out.println("2. Strawberry");
+		System.out.println("3. Mango");
 		Helper.line(80, "-");
 	}
 	
+	
+// For LunchBoxOrder : 
+	public static void setMenu() {
+		C206_CaseStudy.setHeader("Set Menu");
+		System.out.println("--> Western");
+		System.out.println("--> Asian");
+		System.out.println("--> Vegetarian");
+	}
+
 	public static void setHeader(String header) {
 		Helper.line(30, "-");
 		System.out.println(header);
 		Helper.line(30, "-");
 	}
-
+	
+	
+// NOT IN USE YET
 	public static String showAvailability(boolean isAvailable) {
 		String avail;
 
@@ -199,9 +226,12 @@ public class C206_CaseStudy {
 		return avail;
 	}
 
-	//================================= Option 1 View (CRUD - Read) =================================
+	// ================================= Option 1 View (CRUD - Read)================================= 
 	
-//MenuItems
+// Chin wei ,VIEW User account -
+	
+
+// Desmond & Zhen Hong , VIEW MenuItems/Monthly Menu :
 	public static String retrieveMenuSet(ArrayList<menuSet> menuSetList) {
 		String output = "";
 
@@ -213,10 +243,11 @@ public class C206_CaseStudy {
 	}
 	public static void viewMenuSet(ArrayList<menuSet> MenuSetList) {
 		C206_CaseStudy.setHeader("MENUSET ITEMS");
-		String output = retrieveMenuSet(MenuSetList);	
+		String output = retrieveMenuSet(MenuSetList);
 		System.out.println(output);
 	}
 	
+
 	public static String retrieveDrinks(ArrayList<drinks> drinkList) {
 		String output = "";
 
@@ -226,13 +257,13 @@ public class C206_CaseStudy {
 		}
 		return output;
 	}
-	
 	public static void viewDrinks(ArrayList<drinks> drinkList) {
 		C206_CaseStudy.setHeader("DRINK ITEMS");
-		String output = retrieveDrinks(drinkList);	
+		String output = retrieveDrinks(drinkList);
 		System.out.println(output);
-		
+
 	}
+
 	
 	public static String retrieveFruits(ArrayList<fruits> fruitList) {
 		String output = "";
@@ -242,59 +273,100 @@ public class C206_CaseStudy {
 		}
 		return output;
 	}
-	
 	public static void viewFruits(ArrayList<fruits> fruitList) {
 		C206_CaseStudy.setHeader("FRUIT ITEMS");
-		String output = retrieveFruits(fruitList);	
+		String output = retrieveFruits(fruitList);
 		System.out.println(output);
 	}
-
 	
-// LunchBoxOrder ITEMS 
+
+// Hui Hui , VIEW LunchBoxOrder ITEMS : 
 	public static String retrieveLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList) {
-		String output = String.format("%-10s %-20s %-10s %-10s\n", "Order ID" , "Menu Set" , "Drink" , "Fruit");
-		for (int i = 0; i < lbOrderList.size(); i++) { 
-			output += String.format("%-10s %-20s %-10s %-10s\n", lbOrderList.get(i).getOrdID() , lbOrderList.get(i).getMenuset() , lbOrderList.get(i).getDrink() , lbOrderList.get(i).getFruit() );
+		String output = String.format("%-10s %-20s %-10s %-10s\n", "Order ID", "Menu Set", "Drink", "Fruit");
+		for (int i = 0; i < lbOrderList.size(); i++) {
+			output += String.format("%-10s %-20s %-10s %-10s\n", lbOrderList.get(i).getOrdID(),
+					lbOrderList.get(i).getMenuset(), lbOrderList.get(i).getDrink(), lbOrderList.get(i).getFruit());
 		}
-		
 		return output;
 	}
-	
-	public static void viewLunchBoxOrder(ArrayList <LunchBoxOrder> lbOrderList) {
+	public static void viewLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList) {
 		C206_CaseStudy.setHeader("Lunch Box Order ITEMS");
-		String output = retrieveLunchBoxOrder(lbOrderList);	
+		String output = retrieveLunchBoxOrder(lbOrderList);
 		System.out.println(output);
 	}
 	
+// Shi hao , VIEW order bill - 
+	
+	
 
-	//================================= Option 2 Add an item (CRUD - Create) =================================
-	public static LunchBoxOrder inputLunchBoxOrder() { 
+	
+
+	// ================================= Option 2 Add an item (CRUD - Create) =================================
+	
+// Chin wei , ADD User account - 
+	
+	
+	
+// Desmond & Zhen Hong , ADD MenuItems / Monthly Menu :
+	
+	
+	
+// Hui Hui , ADD LunchBoxOrder :
+	public static LunchBoxOrder inputLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList, ArrayList<menuSet> menuSetList) {
+
+		String ordID = Helper.readString("Enter ordID > ");
+		setMenu();
+		String menuSet = Helper.readString("Enter menuSet > ");
+		String  menuType = "";
 		
-		String ordID = Helper.readString("Enter ordID > ") ;
-		String menuSet = Helper.readString("Enter menuSet > ") ;
-		
-		if (menuSet.equalsIgnoreCase("Western")) { 
-			menuSet = "Chicken Chop" ;
-		} else if (menuSet.equalsIgnoreCase("Asian")) { 
-			menuSet = "Chicken Curry" ;
-		} else if (menuSet.equalsIgnoreCase("Vegetarian")) { 
-			menuSet = "Vegetarian Beehoon" ;
-		} else { 
-			System.out.println("menuSet does not exist. Please choose again!!");
+		//still needs improvement
+		for (int i = 0; i < menuSetList.size() ; i++) {
+			if (menuSet.equalsIgnoreCase("Western")) {
+				menuType += menuSetList.get(0).getMenuItem();
+				 
+			} else if (menuSet.equalsIgnoreCase("Asian")) {
+				menuType += menuSetList.get(1).getMenuItem();
+			} else if (menuSet.equalsIgnoreCase("Vegetarian")) {
+				menuType += menuSetList.get(2).getMenuItem();
+			} else {
+				System.out.println("menuSet does not exist. Please choose again!!");
+			}
 		}
+		String drink = Helper.readString("Enter drink > ");
 		
-		String drink = Helper.readString("Enter drink > ") ;
-		String fruit = Helper.readString("Enter fruits > ") ;
-		
-		
-		LunchBoxOrder lbOrd = new LunchBoxOrder(ordID , menuSet , drink , fruit) ;
-		return lbOrd ; 
+		String fruit = Helper.readString("Enter fruit > ");
+
+		LunchBoxOrder lbOrd = new LunchBoxOrder(ordID, menuType, drink, fruit);
+		return lbOrd;
+	}
+	public static void addLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList, LunchBoxOrder lbOrd) {
+		lbOrderList.add(lbOrd);
 	}
 
+	
+	
+// Shi Hao , ADD ORDER BILL - 
+	
+	
+	
+	
+	// ================================= Option 3 Delete (CRUD - Remove)================================= 
+	
+// Chin wei , DELETE user account - 
+	
+	
+	
+// Desmond & Zhen Hong ,DELETE MenuItems / Monthly Menu -
+	
+	
+	
+// Hui Hui , DELETE LunchBoxOrder - 
+	
+	
+	
+// Shi Hao , DELETE Order bill - 
+	
+	
 
-	public static void addLunchBoxOrder (ArrayList<LunchBoxOrder> lbOrdList , LunchBoxOrder lbOrd ) { 
-		lbOrdList.add(lbOrd) ; 
-	}
-	
-	
 }
+	
