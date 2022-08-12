@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 public class C206_CaseStudy {
 
 	public static void main(String[] args) {
@@ -13,7 +12,7 @@ public class C206_CaseStudy {
 		ArrayList<orderbill> orderList = new ArrayList<orderbill>();
 		ArrayList<monthlymenu> monthlyList = new ArrayList<monthlymenu>(); 
 
-// Menu :
+		// Menu :
 		menuSetList.add(new menuSet("Chicken Chop"));
 		menuSetList.add(new menuSet("Chicken Curry"));
 		menuSetList.add(new menuSet("Vegetarian beehoon"));
@@ -45,9 +44,10 @@ public class C206_CaseStudy {
 				
 				// View all LunchBoxOrder
 				C206_CaseStudy.viewLunchBoxOrder(lbOrderList);
-							
+
 
 			} else if (option == 2) {
+
 				// Add/place lunch box order 
 				
 				C206_CaseStudy.setHeader("ADD") ; 
@@ -59,8 +59,23 @@ public class C206_CaseStudy {
 				LunchBoxOrder lbOrd = inputLunchBoxOrder() ; 
 				C206_CaseStudy.addLunchBoxOrder(lbOrderList , lbOrd) ; 
 				System.out.println("Lunch Box Order has been placed");
+
+				// Add a new item
+				foodMenu();
+				int foodOpt = Helper.readInt("Enter option to select food option > ");
+				drinkMenu();
+				int drinkOpt = Helper.readInt("Enter option to select drink option  > ");
+				fruitMenu();
+				int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
+			
+			} else if(option == 3) {
+			
 				
 			}
+			
+			
+			
+			
 		}
 		
 	}
@@ -238,7 +253,6 @@ public class C206_CaseStudy {
 // LunchBoxOrder ITEMS 
 	public static String retrieveLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList) {
 		String output = String.format("%-10s %-20s %-10s %-10s\n", "Order ID" , "Menu Set" , "Drink" , "Fruit");
-
 		for (int i = 0; i < lbOrderList.size(); i++) { 
 			output += String.format("%-10s %-20s %-10s %-10s\n", lbOrderList.get(i).getOrdID() , lbOrderList.get(i).getMenuset() , lbOrderList.get(i).getDrink() , lbOrderList.get(i).getFruit() );
 		}
@@ -252,6 +266,7 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 	
+
 	//================================= Option 2 Add an item (CRUD - Create) =================================
 	public static LunchBoxOrder inputLunchBoxOrder() { 
 		
@@ -275,11 +290,11 @@ public class C206_CaseStudy {
 		LunchBoxOrder lbOrd = new LunchBoxOrder(ordID , menuSet , drink , fruit) ;
 		return lbOrd ; 
 	}
+
+
 	public static void addLunchBoxOrder (ArrayList<LunchBoxOrder> lbOrdList , LunchBoxOrder lbOrd ) { 
 		lbOrdList.add(lbOrd) ; 
 	}
 	
-	
-
 	
 }

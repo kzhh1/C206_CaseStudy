@@ -1,17 +1,22 @@
 
 public class LunchBoxOrder { // Committed by Hui
 	
-	private String ordID ; // based on order no
+	private String ordID ; 
     private String menuset;
     private String drink;
     private String fruit;
 	
-	public LunchBoxOrder(String ordID, String menuset, String drink, String fruit) {
+	
+	public LunchBoxOrder(String ordID, String menuset,String drink, String fruit) {
 		super();
 		this.ordID = ordID;
+		this.menuset=menuset;
+		this.drink=drink;
+		this.fruit=fruit;
 		this.menuset = menuset;
 		this.drink = drink;
 		this.fruit = fruit;
+
 	}
 
 	public String getOrdID() {
