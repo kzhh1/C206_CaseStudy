@@ -63,7 +63,59 @@ public class C206_CaseStudyTest {
 		
 	}
 	
-// ==================== test Viewing of classes ====================
+
+// ==================== test Adding of classes ====================
+	// Chin Wei : 
+	@Test 
+	public void testAddAccount() { 
+		
+		
+	}
+	// Desmond : 
+	@Test
+	public void testAddMenu() { 
+		
+		
+	}
+	// Zhen Hong : 
+	
+	@Test
+	public void testAddMonthlyMenu() { 
+		// Item list is not null, so that can add a new item - boundary
+		assertNotNull("Check if there is valid Camcorder arraylist to add to", monthlyList);
+		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
+		//The item just added is as same as the first item of the list
+		C206_CaseStudy.addMonthly(monthlyList, m1);
+		assertEquals("Check that Camcorder arraylist size is 1", 1, monthlyList.size());
+		assertSame("Check that Camcorder is added", m1, monthlyList.get(0));
+	}
+	
+	//Hui Hui : 
+	@Test 
+	public void testAddLunchBoxOrder() { 
+		// Item list is not null, so that can add a new item - boundary
+		assertNotNull("Check if there is valid LunchBoxOrder arraylist to add to", lbOrderList);
+		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
+		//The item just added is as same as the first item of the list
+		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb1);
+		assertEquals("Check that LunchBoxOrder arraylist size is 1", 1, lbOrderList.size());
+		assertSame("Check that Lunch Box Order is added", lb1, lbOrderList.get(0));
+		
+		//Add another item. test The size of the list is 2? -normal
+		//The item just added is as same as the second item of the list
+		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb2);
+		assertEquals("Check that LunchBoxOrder arraylist size is 2", 2, lbOrderList.size());
+		assertSame("Check that LunchBoxOrder is added", lb2, lbOrderList.get(1));
+	}
+	
+	// Shi Hao : 
+	@Test 
+	public void testAddOrderBill() { 
+		
+	}
+	
+	
+	// ==================== test Viewing of classes ====================
 	// Chin Wei : 
 	
 	
@@ -127,58 +179,6 @@ public class C206_CaseStudyTest {
 	
 	// Shi Hao : 
 			
-	
-// ==================== test Adding of classes ====================
-	// Chin Wei : 
-	@Test 
-	public void testAddAccount() { 
-		
-		
-	}
-	// Desmond : 
-	@Test
-	public void testAddMenu() { 
-		
-		
-	}
-	// Zhen Hong : 
-	
-	@Test
-	public void testAddMonthlyMenu() { 
-	// Item list is not null, so that can add a new item - boundary
-	assertNotNull("Check if there is valid Camcorder arraylist to add to", monthlyList);
-	//Given an empty list, after adding 1 item, the size of the list is 1 - normal
-	//The item just added is as same as the first item of the list
-	C206_CaseStudy.addMonthly(monthlyList, m1);
-	assertEquals("Check that Camcorder arraylist size is 1", 1, monthlyList.size());
-	assertSame("Check that Camcorder is added", m1, monthlyList.get(0));
-	}
-	
-	//Hui Hui : 
-	@Test 
-	public void testAddLunchBoxOrder() { 
-		// Item list is not null, so that can add a new item - boundary
-		assertNotNull("Check if there is valid LunchBoxOrder arraylist to add to", lbOrderList);
-		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
-		//The item just added is as same as the first item of the list
-		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb1);
-		assertEquals("Check that LunchBoxOrder arraylist size is 1", 1, lbOrderList.size());
-		assertSame("Check that Lunch Box Order is added", lb1, lbOrderList.get(0));
-		
-		//Add another item. test The size of the list is 2? -normal
-		//The item just added is as same as the second item of the list
-		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb2);
-		assertEquals("Check that LunchBoxOrder arraylist size is 2", 2, lbOrderList.size());
-		assertSame("Check that LunchBoxOrder is added", lb2, lbOrderList.get(1));
-	}
-	
-	// Shi Hao : 
-	@Test 
-	public void testAddOrderBill() { 
-		
-	}
-	
-	
 	
 // ==================== test Deleting of classes ====================
 	
