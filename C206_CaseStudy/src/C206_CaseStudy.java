@@ -60,13 +60,13 @@ public class C206_CaseStudy {
 				C206_CaseStudy.addLunchBoxOrder(lbOrderList , lbOrd) ; 
 				System.out.println("Lunch Box Order has been placed");
 
-				// Add a new item
-				foodMenu();
-				int foodOpt = Helper.readInt("Enter option to select food option > ");
-				drinkMenu();
-				int drinkOpt = Helper.readInt("Enter option to select drink option  > ");
-				fruitMenu();
-				int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
+//				// Add a new item
+//				foodMenu();
+//				int foodOpt = Helper.readInt("Enter option to select food option > ");
+//				drinkMenu();
+//				int drinkOpt = Helper.readInt("Enter option to select drink option  > ");
+//				fruitMenu();
+//				int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
 			
 			} else if(option == 3) {
 			
@@ -273,15 +273,21 @@ public class C206_CaseStudy {
 		String ordID = Helper.readString("Enter ordID > ") ;
 		String menuSet = Helper.readString("Enter menuSet > ") ;
 		
-		if (menuSet.equalsIgnoreCase("Western")) { 
-			menuSet = "Chicken Chop" ;
-		} else if (menuSet.equalsIgnoreCase("Asian")) { 
-			menuSet = "Chicken Curry" ;
-		} else if (menuSet.equalsIgnoreCase("Vegetarian")) { 
-			menuSet = "Vegetarian Beehoon" ;
-		} else { 
+		while(menuSet.equalsIgnoreCase("Western") |
+ menuSet.equalsIgnoreCase("Asian") || menuSet.equalsIgnoreCase("Vegetarian")){
+			
+			if (menuSet.equalsIgnoreCase("Western")) { 
+				menuSet = "Chicken Chop" ;
+			} else if (menuSet.equalsIgnoreCase("Asian")) { 
+				menuSet = "Chicken Curry" ;
+			} else if (menuSet.equalsIgnoreCase("Vegetarian")) { 
+				menuSet = "Vegetarian Beehoon" ;
+			}
+			
+		else { 
 			System.out.println("menuSet does not exist. Please choose again!!");
-		}
+			menuSet = Helper.readString("Enter menuSet > ") ;
+			}
 		
 		String drink = Helper.readString("Enter drink > ") ;
 		String fruit = Helper.readString("Enter fruits > ") ;
@@ -289,6 +295,12 @@ public class C206_CaseStudy {
 		
 		LunchBoxOrder lbOrd = new LunchBoxOrder(ordID , menuSet , drink , fruit) ;
 		return lbOrd ; 
+	}
+
+
+	private static String equalsIgnoreCase(String string) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
