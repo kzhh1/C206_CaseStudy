@@ -479,7 +479,6 @@ public class C206_CaseStudy {
 //		return null;
 //	}
 	
-// Shi hao , VIEW order bill - 
 	
 	
 
@@ -551,9 +550,6 @@ public class C206_CaseStudy {
 
 	
 	
-// Shi Hao , ADD ORDER BILL - 
-	
-	
 	
 	
 	// ================================= Option 3 Delete (CRUD - Remove)================================= 
@@ -569,15 +565,10 @@ public class C206_CaseStudy {
 		}	
 	}
 	
-// Desmond & Zhen Hong ,DELETE MenuItems / Monthly Menu -
-	
 	
 	
 // Hui Hui , DELETE LunchBoxOrder - 
 	
-	
-	
-// Shi Hao , DELETE Order bill - 
 	
 	
 
