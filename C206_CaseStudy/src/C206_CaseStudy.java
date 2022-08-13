@@ -4,8 +4,6 @@ public class C206_CaseStudy {
 
 	public static void main(String[] args) {
 
-		
-		ArrayList<User> UserList = new ArrayList<User>();
 		ArrayList<menuSet> menuSetList = new ArrayList<menuSet>(); 
 		ArrayList<drinks> drinkList = new ArrayList<drinks>(); 
 		ArrayList<fruits> fruitList = new ArrayList<fruits>(); 
@@ -92,18 +90,17 @@ public class C206_CaseStudy {
 					C206_CaseStudy.viewFruits(fruitList);
 					
 				} else if (menuOpt == 2) { 
-					// Add - 
-//					possible way
-//					foodMenu();
-//					int foodOpt = Helper.readInt("Enter option to select food option > ");
-//					drinkMenu();
-//					int drinkOpt = Helper.readInt("Enter option to select drink option  > ");
-//					fruitMenu();
-//					int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
+					C206_CaseStudy.addmenuSet(menuSetList);
+					System.out.println("MenuSet added successfully!");
+					C206_CaseStudy.addDrinks(drinkList);
+					System.out.println("Drink added successfully!");
+					C206_CaseStudy.addFruits(fruitList);
+					System.out.println("Fruit added successfully!");
 					
 				} else if (menuOpt == 3 ) { 
-					// Delete -
-					
+					C206_CaseStudy.deleteMenuSet(menuSetList);
+					C206_CaseStudy.deleteDrinks(drinkList);
+					C206_CaseStudy.deleteFruits(fruitList);
 				} else if (menuOpt == 4) {
 					System.out.println("Bye!");
 				} else {
@@ -225,14 +222,10 @@ public class C206_CaseStudy {
 			} else {
 				System.out.println("Invalid option");
 			}
-			
-		}
-	}
-				
-				
 
 			
-		// end of while loop 
+		}
+	} // end of while loop 
 
 
 	
@@ -447,9 +440,36 @@ public class C206_CaseStudy {
 	public static void newAccountAdded(ArrayList<Account> Account, Account newAccountUser) {
 		Account.add(newAccountUser);
 	}
+// Desmond , Add Menuitems :
+	public static menuSet addmenuSet(ArrayList<menuSet> menuSetList) {
+		String food = Helper.readString("Enter Food: ");
+
+		menuSetList.add(new menuSet(food));
+		
+		menuSet addmenuSet = new menuSet(food);
+		return addmenuSet;
+	}
+// Desmond , Add Drinkitems :
+		public static drinks addDrinks(ArrayList<drinks> drinkList) {
+			String drink = Helper.readString("Enter Drink: ");
+
+			drinkList.add(new drinks(drink));
+			
+			drinks addDrinks = new drinks(drink);
+			return addDrinks;
+		}	
 	
+// Desmond , Add Fruititems :
+		public static fruits addFruits(ArrayList<fruits> fruitList) {
+			String fruit = Helper.readString("Enter Fruit: ");
+
+			fruitList.add(new fruits(fruit));
+					
+			fruits addFruits = new fruits(fruit);
+			return addFruits;
+				}	
 	
-// Desmond & Zhen Hong , ADD MenuItems / Monthly Menu :
+// Zhen Hong , ADD Monthly Menu :
 	public static monthlymenu addmonthly(ArrayList<monthlymenu> monthlyList) {
 		String month = Helper.readString("Enter Month: ");
 		String mmenu = Helper.readString("Enter MenuSet: ");
@@ -510,17 +530,37 @@ public class C206_CaseStudy {
 			}
 		}	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+// Desmond , Delete Menuset
+	public static void deleteMenuSet(ArrayList<menuSet> menuSetList) {
+		String food = Helper.readString("Enter Food: ");
+		for (int i = 0; i< menuSetList.size(); i++ ) {
+			if(menuSetList.get(i).getMenuItem().equalsIgnoreCase(food)) {
+				menuSetList.remove(i);
+				System.out.println(food + " has been successfully deleted!");
+			}
+		}
+	}
+// Desmond , Delete Drink
+	public static void deleteDrinks(ArrayList<drinks> drinkList) {
+		String drink = Helper.readString("Enter Drink: ");
+		for (int i = 0; i< drinkList.size(); i++ ) {
+			if(drinkList.get(i).getDrink().equalsIgnoreCase(drink)) {
+				drinkList.remove(i);
+				System.out.println(drink + " has been successfully deleted!");
+			}
+		}
+	}
+// Desmond , Delete Fruit
+	public static void deleteFruits(ArrayList<fruits> fruitList) {
+		String fruit = Helper.readString("Enter Fruit: ");
+		for (int i = 0; i< fruitList.size(); i++ ) {
+			if(fruitList.get(i).getFruit().equalsIgnoreCase(fruit)) {
+				fruitList.remove(i);
+				System.out.println(fruit + " has been successfully deleted!");
+			}
+		}
+	}
 	
 	
 	
@@ -535,9 +575,9 @@ public class C206_CaseStudy {
 			}
 		}
 	} 
-	
-	
+
 
 }
+
 	
 	
