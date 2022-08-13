@@ -15,7 +15,7 @@ public class C206_CaseStudyTest {
 	
 	
 	// Zhen Hong : 
-	private monthlymenu m1; 
+	private monthlymenu mm1; 
 	
 	private ArrayList <monthlymenu> monthlyList;
 	
@@ -47,7 +47,7 @@ public class C206_CaseStudyTest {
 		
 		
 		// Zhen Hong : 
-		m1 =new monthlymenu("August","Sushi","Lemonade","Mixed berry fruit salad");
+		mm1 = new monthlymenu("August","Sushi","Lemonade","Mixed berry fruit salad");
 		
 		monthlyList = new ArrayList<monthlymenu>();
 
@@ -85,9 +85,9 @@ public class C206_CaseStudyTest {
 		assertNotNull("Check if there is valid Camcorder arraylist to add to", monthlyList);
 		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
 		//The item just added is as same as the first item of the list
-		C206_CaseStudy.addMonthly(monthlyList, m1);
+		C206_CaseStudy.addMonthly(monthlyList, mm1);
 		assertEquals("Check that Camcorder arraylist size is 1", 1, monthlyList.size());
-		assertSame("Check that Camcorder is added", m1, monthlyList.get(0));
+		assertSame("Check that Camcorder is added", mm1, monthlyList.get(0));
 	}
 	
 	//Hui Hui : 
@@ -128,23 +128,23 @@ public class C206_CaseStudyTest {
 	public void testRetrieveMonthlyMenu() {
 		//fail("Not yet implemented");
 		// Test if Item list is not null but empty - boundary
-		assertNotNull("Test if there is valid Chromebook arraylist to retrieve item from", monthlyList);
+		assertNotNull("Test if there is valid Monthlymenu arraylist to retrieve item from", monthlyList);
 		
 		//test if the list of Chromebook retrieved from the SourceCentre is empty - boundary
 		String allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(monthlyList);
 		String testOutput = "";
-		assertEquals("Test that the retrieved Chromebooklist is empty?", testOutput, allMonthlyMenu);
+		assertEquals("Test that the retrieved monthlylist is empty?", testOutput, allMonthlyMenu);
 		
-		//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
-		C206_CaseStudy.addmonthly(monthlyList);
-		assertEquals("Test that chromebook arraylist size is 2", 1, monthlyList.size());
+		//Given an empty list, after adding 1 items, test if the size of the list is 21 - normal
+		C206_CaseStudy.addMonthly(monthlyList , mm1);
+		assertEquals("Test that Monthlymenu arraylist size is 1", 1, monthlyList.size() );
 		
 		//test if the expected output string same as the list of chromebooks retrieved from the SourceCentre	
-		allMonthlyMenu= C206_CaseStudy.retrieveMonthlymenu(monthlyList);
+		allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(monthlyList);
 		testOutput += String.format("%-10s %-20s %-10s %-10s\n", "August","Sushi","Lemonade","Mixed berry fruit salad" );
 		
 		
-		assertEquals("Test that ViewAllChromebooklist", testOutput, allMonthlyMenu);
+		assertEquals("Test that viewMonthlyMenu", testOutput, allMonthlyMenu);
 	}
 
 	
