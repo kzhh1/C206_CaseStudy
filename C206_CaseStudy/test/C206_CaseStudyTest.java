@@ -195,7 +195,29 @@ public class C206_CaseStudyTest {
 	
 	// Shi Hao : 
 	
-	
+	public void testViewOrderBill() {
+		
+		// Test if Item list is not null but empty -boundary
+		assertNotNull("Test if there is valid OrderBills arraylist to retrieve item", orderBills);
+		
+		//Given an empty list, after adding an item, test if the size of the list is 1 
+		orderBills.add(ob1);
+		assertEquals("Test that orderBills arraylist size is 1", 1, orderBills.size());
+		orderbill orderbill = orderBills.get(0);
+		String testOutput = ("Serial Number: 1\n"
+				+ "Your Order:\n" 
+				+ "Food of Choice: Chicken Chop\n"
+				+ "Drink of Choice: Bandung\n"
+				+ "Fruit of Choice: Mango\n"
+				+ "Total Cost: $8.50");
+		String actualOutput = ("Serial Number: " + orderbill.getSerialnumber() + "\n" +
+		"Your Order:\n" +
+		"Food of Choice: " + orderbill.getMenuset() + "\n" +
+		"Drink of Choice: " + orderbill.getDrink() + "\n" +
+		"Fruit of Choice: " + orderbill.getFruit() + "\n" +
+		"Total Cost: $" + orderbill.getPrice());
+		assertEquals("Test that OrderBill output is the same as test output", testOutput, actualOutput);
+	}
 			
 	
 // ==================== test Deleting of classes ====================
@@ -223,6 +245,16 @@ public class C206_CaseStudyTest {
 	}
 	
 	// Shi Hao : 
+	public void testDeleteOrderBill() { 
+		assertNotNull("Test if there is valid OrderBills arraylist to delete from", orderBills);
+		orderBills.add(ob1);
+		
+		  
+		// Delete an Orderbill. CHeck that size is 0
+		orderBills.remove(0);
+		assertEquals("Test that the LunchBoxOrder arraylist size is 0", 0, lbOrderList.size());
+
+	}
 	
 	
 	
