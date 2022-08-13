@@ -152,7 +152,7 @@ public class C206_CaseStudyTest {
 	// Hui Hui : 
 	@Test
 	public void testRetrieveLunchBoxOrder() {
-		
+		//fail("Not yet implemented");
 		// Test if Item list is not null but empty -boundary
 		assertNotNull("Test if there is valid LunchBoxOrder arraylist to retrieve item", lbOrderList);
 		
