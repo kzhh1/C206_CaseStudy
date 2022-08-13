@@ -394,7 +394,6 @@ public void testretrieveFruits() {
 		menuSetList.add(ms);
 		
 		  
-		// Delete an Orderbill. CHeck that size is 0
 		menuSetList.remove(0);
 		assertEquals("Test that the menuset arraylist size is 0", 0, menuSetList.size());
 
@@ -404,7 +403,6 @@ public void testretrieveFruits() {
 		drinkList.add(dr);
 		
 		  
-		// Delete an Orderbill. CHeck that size is 0
 		drinkList.remove(0);
 		assertEquals("Test that the drink arraylist size is 0", 0, drinkList.size());
 
@@ -414,7 +412,6 @@ public void testretrieveFruits() {
 		fruitList.add(fr);
 		
 		  
-		// Delete an Orderbill. CHeck that size is 0
 		fruitList.remove(0);
 		assertEquals("Test that the fruit arraylist size is 0", 0, fruitList.size());
 
