@@ -187,15 +187,22 @@ public class C206_CaseStudyTest {
 	
 	
 	// Desmond : 
-	
-	
-	// Zhen Hong : 
-	
+
 	
 	// Hui Hui - 
 	@Test 
 	public void testDeletelbOrder() { 
-		
+		assertNotNull("Test if there is valid Timetable arraylist to delete from", lbOrderList);
+		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb1);
+		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb2);
+		  
+		// Delete another timetable. The size of the list is 1?
+		C206_CaseStudy.doDeletelbOrder(lbOrderList, "lb001");
+		assertEquals("Test that the timetable arraylist size is 1", 1, lbOrderList.size());
+		  
+		// Delete another timetable. The size of the list is 0?
+		C206_CaseStudy.doDeletelbOrder(lbOrderList, "lb002");
+		assertEquals("Test that the timetable arraylist size is 0", 0, lbOrderList.size());
 	}
 	
 	// Shi Hao : 

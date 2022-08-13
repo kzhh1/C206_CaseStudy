@@ -573,14 +573,31 @@ public class C206_CaseStudy {
 	
 // Hui Hui , DELETE LunchBoxOrder - 
 	public static void deleteLunchBoxOrder (ArrayList <LunchBoxOrder> lbOrderList ) { 
+		
 		String ordID = Helper.readString("Enter order ID : ");
-		for (int i = 0 ; i < lbOrderList.size() ; i ++) {
-			if(lbOrderList.get(i).getOrdID().equalsIgnoreCase(ordID) ) { 
+		
+		boolean isDeleted = doDeletelbOrder(lbOrderList , ordID ) ; 
+		
+		if ( isDeleted == false ) { 
+			System.out.println("Order ID does not exist");
+		} else { 
+			System.out.println("Order ID " + ordID + " deleted!");
+		}
+	}// end of deleteLunchBoxOrder() method 
+	
+	
+	public static boolean doDeletelbOrder(ArrayList <LunchBoxOrder> lbOrderList , String ordID ) { 
+		boolean isDeleted = false ; 
+		
+		for (int i = 0 ; i < lbOrderList.size() ; i++ ) { 
+			if (ordID.equalsIgnoreCase(lbOrderList.get(i).getOrdID()) ) { 
 				lbOrderList.remove(i) ; 
-				System.out.println("Order ID " + ordID + " deleted!");
+				
+				isDeleted = true ; 
 			}
 		}
-	} 
+		return isDeleted ;
+	}// end of doDeletelbOrder() method 
 
 
 }
