@@ -29,15 +29,6 @@ public class C206_CaseStudy {
 		lbOrderList.add(new LunchBoxOrder("lb001", "Chicken Chop", "Bandung", "Mango"));
 		lbOrderList.add(new LunchBoxOrder("lb002", "chicken Curry", "Teh", "Watermelon"));
 		
-	// Order Bill : 
-		orderList.add(new Orderbill (orderbillID , orderID , menuset , drink , fruit , price )) ; 
-		//orderbillID , can be like , ob001 (if uw , can match w my orderID number
-		// orderID , can take from lunchbox order 
-		// menu set , vegetarian/asian/western
-		// drink and fruit take from the drinkList and fruitList
-		// price , see how much uw put , maybe like a $8/$10 , not so ex cause school 
-		
-
 		int option = 0;
 
 		while (option != 5) {
