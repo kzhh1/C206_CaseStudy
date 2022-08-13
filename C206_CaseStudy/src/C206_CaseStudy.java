@@ -158,6 +158,10 @@ public class C206_CaseStudy {
 					String drinkname = Helper.readString("Enter Drink Item Name > ") ;
 					String fruitname = Helper.readString("Enter Fruit Item Name > ") ;
 				    double price = Helper.readDouble("Enter Total Price of items > ");
+					while (price <= 0) {
+				    		System.out.println("Price must be more than 0!");
+				    		price = Helper.readDouble("Enter Total Price of items > ");
+				    }
 				    //orderbill.addorderbill
 				    orderBills.add(new orderbill(serialnumber, foodname, drinkname, fruitname, price));
 					System.out.println("Your order bill has been added.");
