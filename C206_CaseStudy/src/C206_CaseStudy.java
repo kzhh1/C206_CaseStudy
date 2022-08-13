@@ -124,14 +124,14 @@ public class C206_CaseStudy {
 					
 				} else if (menuOpt == 2 ) { 
 					// Add/place lunch box order : 
-					LunchBoxOrder lbOrd = inputLunchBoxOrder(lbOrderList, menuSetList);
-					C206_CaseStudy.addLunchBoxOrder(lbOrderList, lbOrd);
-					System.out.println("Lunch Box Order has been placed");
-					
-					
-//					LunchBoxOrder lbOrd = inputLunchBoxOrder() ; 
-//					C206_CaseStudy.addLunchBoxOrder(lbOrderList , lbOrd) ; 
+//					LunchBoxOrder lbOrd = inputLunchBoxOrder(lbOrderList, menuSetList);
+//					C206_CaseStudy.addLunchBoxOrder(lbOrderList, lbOrd);
 //					System.out.println("Lunch Box Order has been placed");
+//					
+					
+					LunchBoxOrder lbOrd = inputLunchBoxOrder() ; 
+					C206_CaseStudy.addLunchBoxOrder(lbOrderList , lbOrd) ; 
+					System.out.println("Lunch Box Order has been placed");
 					
 				} else if (menuOpt == 3 ) { 
 					// Delete - 
@@ -146,16 +146,6 @@ public class C206_CaseStudy {
 				// String orderId = Helper.readString("Enter order ID > ");
 				// ^ uncomment if we doing a if else , if (orderID.contains(
 					
-
-				
-
-//				// Add a new item
-//				foodMenu();
-//				int foodOpt = Helper.readInt("Enter option to select food option > ");
-//				drinkMenu();
-//				int drinkOpt = Helper.readInt("Enter option to select drink option  > ");
-//				fruitMenu();
-//				int fruitOpt = Helper.readInt("Enter option to select fruit option  > ");
 				
 			} else if (option == 4) {
 				C206_CaseStudy.orderBillMenu();
@@ -456,18 +446,19 @@ public class C206_CaseStudy {
 			System.out.println("menuSet does not exist. Please choose again!!");
 			menuSet = Helper.readString("Enter menuSet > ") ;
 			}
+
+	}
 		String drink = Helper.readString("Enter drink > ") ;
 		String fruit = Helper.readString("Enter fruits > ") ;
-		
-		
-		LunchBoxOrder lbOrd = new LunchBoxOrder(ordID , menuSet , drink , fruit) ;
+
+		LunchBoxOrder lbOrd = new LunchBoxOrder(ordID , menuSet , drink , fruit) ;	
 		return lbOrd ; 
-	}
-		
 } // end of inputLunchOrder() 
-	public static void addLunchBoxOrder (ArrayList<LunchBoxOrder> lbOrdList , LunchBoxOrder lbOrd ) { 
-		lbOrdList.add(lbOrd) ; 
+	
+	public static void addLunchBoxOrder (ArrayList <LunchBoxOrder> lbOrderList , LunchBoxOrder lbOrd ) { 
+		lbOrderList.add(lbOrd) ; 
 	}
+	
 	
 //	private static String equalsIgnoreCase(String string) {
 //		
