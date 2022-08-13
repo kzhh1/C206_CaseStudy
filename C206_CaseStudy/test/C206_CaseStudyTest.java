@@ -85,8 +85,6 @@ public class C206_CaseStudyTest {
 		
 	}
 	
-// ==================== test Viewing of classes ====================
-	
 	
 // ==================== test Adding of classes ====================
 	
@@ -199,29 +197,29 @@ public class C206_CaseStudyTest {
 	@Test
 	public void testviewAccount() {
 		// Test if account list is not null but empty, so that can add a new account
-				assertNotNull("Test if there is valid account arraylist to add to", newAccount);
+		assertNotNull("Test if there is valid account arraylist to add to", newAccount);
+		
+		//test if the list of account retrieved from the CaseStudy is empty
+		String allAccount= C206_CaseStudy.getAccountInfo(newAccount);
+		String testOutput = "";
+		assertEquals("Check that account list", testOutput, allAccount);
 				
-				//test if the list of account retrieved from the CaseStudy is empty
-				String allAccount= C206_CaseStudy.getAccountInfo(newAccount);
-				String testOutput = "";
-				assertEquals("Check that account list", testOutput, allAccount);
-						
-				//Given an empty list, after adding 1 account, test if the size of the list is 1
-				C206_CaseStudy.newAccountAdded(newAccount, ac);
-				assertEquals("Test if that account arraylist size is 2?", 1, newAccount.size());
-				
-				//test if the expected output string same as the list of account retrieved from the CaseStudy
-				allAccount= C206_CaseStudy.getAccountInfo(newAccount);
+		//Given an empty list, after adding 1 account, test if the size of the list is 1
+		C206_CaseStudy.newAccountAdded(newAccount, ac);
+		assertEquals("Test if that account arraylist size is 2?", 1, newAccount.size());
+		
+		//test if the expected output string same as the list of account retrieved from the CaseStudy
+		allAccount= C206_CaseStudy.getAccountInfo(newAccount);
 
-				testOutput = String.format("%-15s %-20s %-20s %-15s\n",1,"84651","Mary","Susan");
-	
-				assertEquals("Check that account list", testOutput, allAccount);
+		testOutput = String.format("%-15s %-20s %-20s %-15s\n",1,"84651","Mary","Susan");
+
+		assertEquals("Check that account list", testOutput, allAccount);
 		
 	}
 	
 	
 	// Desmond : 
-public void testretrieveMenuSet() {
+	public void testretrieveMenuSet() {
 		
 		//fail("Not yet implemented");
 		// Test if MenuSet list is not null but empty - boundary
@@ -243,47 +241,47 @@ public void testretrieveMenuSet() {
 		assertEquals("Test that viewMenuSet", testOutput, allMenuSet);
 	}
 			
-public void testretrieveDrinks() {
+	public void testretrieveDrinks() {
 	
-	//fail("Not yet implemented");
-	// Test if Drink list is not null but empty - boundary
-	assertNotNull("Test if there is valid drinks arraylist to retrieve drink from", drinkList);
-			
-	//test if the list of Drink retrieved from the C206_CaseStudy is empty - boundary
-	String allDrinks = C206_CaseStudy.retrieveDrinks(drinkList);
-	String testOutput = "";
-	assertEquals("Test that the retrieved menusetlist is empty?", testOutput, allDrinks);
+		//fail("Not yet implemented");
+		// Test if Drink list is not null but empty - boundary
+		assertNotNull("Test if there is valid drinks arraylist to retrieve drink from", drinkList);
+				
+		//test if the list of Drink retrieved from the C206_CaseStudy is empty - boundary
+		String allDrinks = C206_CaseStudy.retrieveDrinks(drinkList);
+		String testOutput = "";
+		assertEquals("Test that the retrieved menusetlist is empty?", testOutput, allDrinks);
+	
+		//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
+		C206_CaseStudy.addDrinks(drinkList);
+		assertEquals("Test that drink arraylist size is 1", 1, drinkList.size());
+		//test if the expected output string same as the list of Drink retrieved from the C206_CaseStudy	
+		allDrinks = C206_CaseStudy.retrieveDrinks(drinkList);
+		testOutput += String.format("%-10s\n", "Bandung" );
+		
+		assertEquals("Test that viewDrinks", testOutput, allDrinks);
+	}
 
-	//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
-	C206_CaseStudy.addDrinks(drinkList);
-	assertEquals("Test that drink arraylist size is 1", 1, drinkList.size());
-	//test if the expected output string same as the list of Drink retrieved from the C206_CaseStudy	
-	allDrinks = C206_CaseStudy.retrieveDrinks(drinkList);
-	testOutput += String.format("%-10s\n", "Bandung" );
+	public void testretrieveFruits() {
+		
+		//fail("Not yet implemented");
+		// Test if Drink list is not null but empty - boundary
+		assertNotNull("Test if there is valid fruits arraylist to retrieve fruit from", fruitList);
+				
+		//test if the list of Drink retrieved from the C206_CaseStudy is empty - boundary
+		String allFruits = C206_CaseStudy.retrieveFruits(fruitList);
+		String testOutput = "";
+		assertEquals("Test that the retrieved fruitlist is empty?", testOutput, allFruits);
 	
-	assertEquals("Test that viewDrinks", testOutput, allDrinks);
-}
-
-public void testretrieveFruits() {
-	
-	//fail("Not yet implemented");
-	// Test if Drink list is not null but empty - boundary
-	assertNotNull("Test if there is valid fruits arraylist to retrieve fruit from", fruitList);
-			
-	//test if the list of Drink retrieved from the C206_CaseStudy is empty - boundary
-	String allFruits = C206_CaseStudy.retrieveFruits(fruitList);
-	String testOutput = "";
-	assertEquals("Test that the retrieved fruitlist is empty?", testOutput, allFruits);
-
-	//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
-	C206_CaseStudy.addFruits(fruitList);
-	assertEquals("Test that fruit arraylist size is 1", 1, fruitList.size());
-	//test if the expected output string same as the list of Drink retrieved from the C206_CaseStudy	
-	allFruits = C206_CaseStudy.retrieveFruits(fruitList);
-	testOutput += String.format("%-10s\n", "Watermelon" );
-	
-	assertEquals("Test that viewFruits", testOutput, allFruits);
-}
+		//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
+		C206_CaseStudy.addFruits(fruitList);
+		assertEquals("Test that fruit arraylist size is 1", 1, fruitList.size());
+		//test if the expected output string same as the list of Drink retrieved from the C206_CaseStudy	
+		allFruits = C206_CaseStudy.retrieveFruits(fruitList);
+		testOutput += String.format("%-10s\n", "Watermelon" );
+		
+		assertEquals("Test that viewFruits", testOutput, allFruits);
+	}
 
 
 // Zhen Hong : 
@@ -318,7 +316,6 @@ public void testretrieveFruits() {
 		//fail("Not yet implemented");
 		// Test if Item list is not null but empty -boundary
 		assertNotNull("Test if there is valid LunchBoxOrder arraylist to retrieve item", lbOrderList);
-				
 	
 		//test if the list of LunchBoxOrder retrieved from the C206_CaseStudy is empty - boundary
 		String allLunchBoxOrder= C206_CaseStudy.retrieveLunchBoxOrder(lbOrderList);
@@ -336,7 +333,6 @@ public void testretrieveFruits() {
 		testOutput += String.format("%-10s %-20s %-10s %-10s\n", "lb002", "chicken Curry", "Teh", "Watermelon" );
 	
 		assertEquals("Test that ViewLunchBoxOrderlist", testOutput, allLunchBoxOrder);
-		
 	}
 	
 	
@@ -393,8 +389,6 @@ public void testretrieveFruits() {
 		assertNotNull("Test if there is valid menuset arraylist to delete from", menuSetList);
 		menuSetList.add(ms);
 		
-		  
-		// Delete an Orderbill. CHeck that size is 0
 		menuSetList.remove(0);
 		assertEquals("Test that the menuset arraylist size is 0", 0, menuSetList.size());
 
@@ -402,9 +396,7 @@ public void testretrieveFruits() {
 	public void testdeleteDrinks() { 
 		assertNotNull("Test if there is valid drink arraylist to delete from", drinkList);
 		drinkList.add(dr);
-		
-		  
-		// Delete an Orderbill. CHeck that size is 0
+		 
 		drinkList.remove(0);
 		assertEquals("Test that the drink arraylist size is 0", 0, drinkList.size());
 
@@ -413,8 +405,6 @@ public void testretrieveFruits() {
 		assertNotNull("Test if there is valid fruit arraylist to delete from", fruitList);
 		fruitList.add(fr);
 		
-		  
-		// Delete an Orderbill. CHeck that size is 0
 		fruitList.remove(0);
 		assertEquals("Test that the fruit arraylist size is 0", 0, fruitList.size());
 
