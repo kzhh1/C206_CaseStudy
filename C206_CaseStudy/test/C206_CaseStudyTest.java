@@ -231,6 +231,7 @@ public class C206_CaseStudyTest {
 	// Hui Hui - 
 	@Test 
 	public void testDeletelbOrder() { 
+		// test that LunchBoxOrder list is not null , so that can delete orderID . 
 		assertNotNull("Test if there is valid LunchBoxOrder arraylist to delete from", lbOrderList);
 		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb1);
 		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb2);
