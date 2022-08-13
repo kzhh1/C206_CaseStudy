@@ -132,7 +132,7 @@ public class C206_CaseStudyTest {
 		// Test if Item list is not null but empty - boundary
 		assertNotNull("Test if there is valid Monthlymenu arraylist to retrieve item from", monthlyList);
 				
-		//test if the list of Chromebook retrieved from the SourceCentre is empty - boundary
+		//test if the list of monthlyMenu retrieved from the C206_CaseStudy is empty - boundary
 		String allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(monthlyList);
 		String testOutput = "";
 		assertEquals("Test that the retrieved monthlylist is empty?", testOutput, allMonthlyMenu);
@@ -141,7 +141,7 @@ public class C206_CaseStudyTest {
 		C206_CaseStudy.addMonthly(monthlyList,mm1);
 		assertEquals("Test that chromebook arraylist size is 1", 1, monthlyList.size());
 		
-		//test if the expected output string same as the list of chromebooks retrieved from the SourceCentre	
+		//test if the expected output string same as the list of monthlyMenu retrieved from the C206_CaseStudy	
 		allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(monthlyList);
 		testOutput += String.format("%-10s %-20s %-10s %-10s\n", "August","Sushi","Lemonade","Mixed berry fruit salad" );
 		
@@ -192,17 +192,17 @@ public class C206_CaseStudyTest {
 	// Hui Hui - 
 	@Test 
 	public void testDeletelbOrder() { 
-		assertNotNull("Test if there is valid Timetable arraylist to delete from", lbOrderList);
+		assertNotNull("Test if there is valid LunchBoxOrder arraylist to delete from", lbOrderList);
 		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb1);
 		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb2);
 		  
-		// Delete another timetable. The size of the list is 1?
+		// Delete another LunchBoxOrder. The size of the list is 1?
 		C206_CaseStudy.doDeletelbOrder(lbOrderList, "lb001");
-		assertEquals("Test that the timetable arraylist size is 1", 1, lbOrderList.size());
+		assertEquals("Test that the LunchBoxOrder arraylist size is 1", 1, lbOrderList.size());
 		  
-		// Delete another timetable. The size of the list is 0?
+		// Delete another LunchBoxOrder. The size of the list is 0?
 		C206_CaseStudy.doDeletelbOrder(lbOrderList, "lb002");
-		assertEquals("Test that the timetable arraylist size is 0", 0, lbOrderList.size());
+		assertEquals("Test that the LunchBoxOrder arraylist size is 0", 0, lbOrderList.size());
 	}
 	
 	// Shi Hao : 
