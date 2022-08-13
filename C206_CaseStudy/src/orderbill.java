@@ -9,8 +9,35 @@
 
 public class orderbill {
 
+	public orderbill(int serialnumber, String menuset, String drink, String fruit, double price) {
+		super();
+		this.serialnumber = serialnumber;
+		this.menuset = menuset;
+		this.drink = drink;
+		this.fruit = fruit;
+		this.price = price;
+	}
+	
+	public int getSerialnumber() {
+		return serialnumber;
+	}
+	public String getMenuset() {
+		return menuset;
+	}
+	public String getDrink() {
+		return drink;
+	}
+	public String getFruit() {
+		return fruit;
+	}
+	public double getPrice() {
+		return price;
+	}
+
+	private int serialnumber;
     private String menuset;
     private String drink;
     private String fruit;
-	
+    private double price;
+    	
 }
