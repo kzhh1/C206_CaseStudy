@@ -124,18 +124,19 @@ public class C206_CaseStudy {
 					
 				} else if (menuOpt == 2 ) { 
 					// Add/place lunch box order : 
-//					LunchBoxOrder lbOrd = inputLunchBoxOrder(lbOrderList, menuSetList);
-//					C206_CaseStudy.addLunchBoxOrder(lbOrderList, lbOrd);
-//					System.out.println("Lunch Box Order has been placed");
-//					
-					
-					LunchBoxOrder lbOrd = inputLunchBoxOrder() ; 
-					C206_CaseStudy.addLunchBoxOrder(lbOrderList , lbOrd) ; 
+					LunchBoxOrder lbOrd = inputLunchBoxOrder(lbOrderList, menuSetList);
+					C206_CaseStudy.addLunchBoxOrder(lbOrderList, lbOrd);
 					System.out.println("Lunch Box Order has been placed");
+					
+					
+//					LunchBoxOrder lbOrd = inputLunchBoxOrder() ; 
+//					C206_CaseStudy.addLunchBoxOrder(lbOrderList , lbOrd) ; 
+//					System.out.println("Lunch Box Order has been placed");
 					
 				} else if (menuOpt == 3 ) { 
 					// Delete - 
-					
+					deleteLunchBoxOrder(lbOrderList) ; 
+
 					
 				} else if (menuOpt == 4) {
 					System.out.println("Bye!");
@@ -219,11 +220,11 @@ public class C206_CaseStudy {
 					System.out.println("Invalid option");
 				}
 				
-				}else if (option == 6) {
-					System.out.println("Bye!");
-				} else {
-					System.out.println("Invalid option");
-				}
+			}else if (option == 6) {
+				System.out.println("Bye!");
+			} else {
+				System.out.println("Invalid option");
+			}
 			
 		}
 	}
@@ -431,50 +432,6 @@ public class C206_CaseStudy {
 	}
 	
 
-	//================================= Option 2 Add an item (CRUD - Create) =================================
-	public static LunchBoxOrder inputLunchBoxOrder() { 
-		
-		String ordID = Helper.readString("Enter ordID > ") ;
-		String menuSet = Helper.readString("Enter menuSet > ") ;
-		
-		while(menuSet.equalsIgnoreCase("Western") |
- menuSet.equalsIgnoreCase("Asian") || menuSet.equalsIgnoreCase("Vegetarian")){
-			
-			if (menuSet.equalsIgnoreCase("Western")) { 
-				menuSet = "Chicken Chop" ;
-			} else if (menuSet.equalsIgnoreCase("Asian")) { 
-				menuSet = "Chicken Curry" ;
-			} else if (menuSet.equalsIgnoreCase("Vegetarian")) { 
-				menuSet = "Vegetarian Beehoon" ;
-			}
-		else { 
-			System.out.println("menuSet does not exist. Please choose again!!");
-			menuSet = Helper.readString("Enter menuSet > ") ;
-			}
-
-	}
-		String drink = Helper.readString("Enter drink > ") ;
-		String fruit = Helper.readString("Enter fruits > ") ;
-
-		LunchBoxOrder lbOrd = new LunchBoxOrder(ordID , menuSet , drink , fruit) ;	
-		return lbOrd ; 
-} // end of inputLunchOrder() 
-	
-	public static void addLunchBoxOrder (ArrayList <LunchBoxOrder> lbOrderList , LunchBoxOrder lbOrd ) { 
-		lbOrderList.add(lbOrd) ; 
-	}
-	
-	
-//	private static String equalsIgnoreCase(String string) {
-//		
-//		return null;
-//	}
-	
-	
-	
-
-	
-
 	// ================================= Option 2 Add an item (CRUD - Create) =================================
 	
 // Chin wei , ADD User account - 
@@ -514,15 +471,16 @@ public class C206_CaseStudy {
 		String menuSet = Helper.readString("Enter menuSet > ");
 		String  menuType = "";
 		
-		//still needs improvement
 		for (int i = 0; i < menuSetList.size() ; i++) {
 			if (menuSet.equalsIgnoreCase("Western")) {
 				menuType += menuSetList.get(0).getMenuItem();
-				 
+				break ;
 			} else if (menuSet.equalsIgnoreCase("Asian")) {
 				menuType += menuSetList.get(1).getMenuItem();
+				break;
 			} else if (menuSet.equalsIgnoreCase("Vegetarian")) {
 				menuType += menuSetList.get(2).getMenuItem();
+				break;
 			} else {
 				System.out.println("menuSet does not exist. Please choose again!!");
 			}
@@ -540,9 +498,6 @@ public class C206_CaseStudy {
 	}
 
 	
-	
-	
-	
 	// ================================= Option 3 Delete (CRUD - Remove)================================= 
 	
 // Chin wei , DELETE user account - 
@@ -551,15 +506,35 @@ public class C206_CaseStudy {
 		for (int i = 0; i< Account.size(); i++ ) {
 			if(Account.get(i).getAccId() == accID) {
 				Account.remove(i);
-				System.out.println("Account ID" + accID + "deleted!");
+				System.out.println("Account ID " + accID + " deleted!");
 			}
 		}	
 	}
 	
 	
 	
-// Hui Hui , DELETE LunchBoxOrder - 
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+// Hui Hui , DELETE LunchBoxOrder - 
+	public static void deleteLunchBoxOrder (ArrayList <LunchBoxOrder> lbOrderList ) { 
+		String ordID = Helper.readString("Enter order ID : ");
+		for (int i = 0 ; i < lbOrderList.size() ; i ++) {
+			if(lbOrderList.get(i).getOrdID().equalsIgnoreCase(ordID) ) { 
+				lbOrderList.remove(i) ; 
+				System.out.println("Order ID " + ordID + " deleted!");
+			}
+		}
+	} 
 	
 	
 
