@@ -9,6 +9,12 @@ import org.junit.Test;
 public class C206_CaseStudyTest {
 	
 	// Chin Wei : 
+	private Account ac;
+
+	
+	
+	private ArrayList<Account> newAccount;
+	
 	
 	
 	// Desmond : 
@@ -53,7 +59,8 @@ public class C206_CaseStudyTest {
 	// Prepare test data 
 		
 		// Chin Wei : 
-		
+		ac = new Account(1,"84651","Mary","Susan");
+
 		
 		// Desmond : 
 		menuSetList.add(new menuSet("Chicken Chop"));
@@ -95,11 +102,31 @@ public class C206_CaseStudyTest {
 	
 	
 	// Chin Wei : 
-	@Test 
-	public void testAddAccount() { 
-		
+	@Test
+	public void testcreateAccount() {
+		// Test if account list is not null but empty, so that can add a new account
+				assertNotNull("Test if there is valid account arraylist to add to", newAccount);
+				
+				//test if the list of account retrieved from the CaseStudy is empty
+				String allAccount= C206_CaseStudy.getAccountInfo(newAccount);
+				String testOutput = "";
+				assertEquals("Check that account list", testOutput, allAccount);
+						
+				//Given an empty list, after adding 2 account, test if the size of the list is 2
+				C206_CaseStudy.newAccountAdded(newAccount, ac);
+				assertEquals("Test if that account arraylist size is 2?", 2, newAccount.size());
+				
+				//test if the expected output string same as the list of account retrieved from the CaseStudy
+				allAccount= C206_CaseStudy.getAccountInfo(newAccount);
+
+				testOutput = String.format("%-15s %-20s %-20s %-15s\n",1,"84651","Mary","Susan");
+
+				
+			
+				assertEquals("Check that account list", testOutput, allAccount);
 		
 	}
+
 	// Desmond : 
 	@Test
 	public void testaddmenuSet() { 
@@ -159,6 +186,30 @@ public class C206_CaseStudyTest {
 	
 	// ==================== test Viewing of classes ====================
 	// Chin Wei : 
+	@Test
+	public void testviewAccount() {
+		// Test if account list is not null but empty, so that can add a new account
+				assertNotNull("Test if there is valid account arraylist to add to", newAccount);
+				
+				//test if the list of account retrieved from the CaseStudy is empty
+				String allAccount= C206_CaseStudy.getAccountInfo(newAccount);
+				String testOutput = "";
+				assertEquals("Check that account list", testOutput, allAccount);
+						
+				//Given an empty list, after adding 1 account, test if the size of the list is 1
+				C206_CaseStudy.newAccountAdded(newAccount, ac);
+				assertEquals("Test if that account arraylist size is 2?", 1, newAccount.size());
+				
+				//test if the expected output string same as the list of account retrieved from the CaseStudy
+				allAccount= C206_CaseStudy.getAccountInfo(newAccount);
+
+				testOutput = String.format("%-15s %-20s %-20s %-15s\n",1,"84651","Mary","Susan");
+	
+				
+			
+				assertEquals("Check that account list", testOutput, allAccount);
+		
+	}
 	
 	
 	// Desmond : 
@@ -310,7 +361,23 @@ public void testretrieveFruits() {
 // ==================== test Deleting of classes ====================
 	
 	// Chin Wei : 
-	
+	public void testDeleteAccount() {
+		// account list is not null, so that can delete a account
+		assertNotNull("Test if there is valid account arraylist to add to", newAccount);
+				
+		//Given an empty list, after adding 3 account, the size of the list is 3
+		C206_CaseStudy.newAccountAdded(newAccount, ac);	
+		assertEquals("Test if that account arraylist size is 1?", 1, newAccount.size());
+				
+		//The account just added is as same as the first account of the list
+		assertSame("Test that account is added same as 1st account of the list?", ac, newAccount.get(0));
+				
+		//Given that the size of the list is now 1, want to delete one of it to revert back list size to 0
+		C206_CaseStudy.deleteAccount(newAccount);
+		assertEquals("Test that account arraylist size is 0?", 0, newAccount.size());
+
+		
+	}
 	
 	// Desmond : 
 	public void testdeleteMenuSet() { 
@@ -372,7 +439,8 @@ public void testretrieveFruits() {
 	@After
 	public void tearDown() throws Exception {
 		// Chin Wei : 
-		
+		ac = null;
+		newAccount = null;
 		
 		// Desmond : 
 		ms = null ; 
