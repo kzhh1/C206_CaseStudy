@@ -158,6 +158,10 @@ public class C206_CaseStudy {
 					String drinkname = Helper.readString("Enter Drink Item Name > ") ;
 					String fruitname = Helper.readString("Enter Fruit Item Name > ") ;
 				    double price = Helper.readDouble("Enter Total Price of items > ");
+					while (price <= 0) {
+				    		System.out.println("Price must be more than 0!");
+				    		price = Helper.readDouble("Enter Total Price of items > ");
+				    }
 				    //orderbill.addorderbill
 				    orderBills.add(new orderbill(serialnumber, foodname, drinkname, fruitname, price));
 					System.out.println("Your order bill has been added.");
@@ -167,7 +171,7 @@ public class C206_CaseStudy {
 					
 					int i = Helper.readInt("Enter serial number of entry to view > ");
 					
-					while (i > orderBills.size()) {
+					while (i <= 0 || i > orderBills.size()) {
 						System.out.println("Please enter a valid serial number!");
 						i = Helper.readInt("Enter serial number of entry to view > ");
 					}
@@ -185,7 +189,7 @@ public class C206_CaseStudy {
 				} else if (menuOpt == 3 ) {
 					// Delete -
 					int i = Helper.readInt("Enter serial number of entry to delete > ");
-					while (i > orderBills.size()) {
+					while (i <= 0 || i > orderBills.size()) {
 						System.out.println("Please enter a valid serial number!");
 						i = Helper.readInt("Enter serial number of entry to delete > ");
 					}
@@ -573,14 +577,31 @@ public class C206_CaseStudy {
 	
 // Hui Hui , DELETE LunchBoxOrder - 
 	public static void deleteLunchBoxOrder (ArrayList <LunchBoxOrder> lbOrderList ) { 
+		
 		String ordID = Helper.readString("Enter order ID : ");
-		for (int i = 0 ; i < lbOrderList.size() ; i ++) {
-			if(lbOrderList.get(i).getOrdID().equalsIgnoreCase(ordID) ) { 
+		
+		boolean isDeleted = doDeletelbOrder(lbOrderList , ordID ) ; 
+		
+		if ( isDeleted == false ) { 
+			System.out.println("Order ID does not exist");
+		} else { 
+			System.out.println("Order ID " + ordID + " deleted!");
+		}
+	}// end of deleteLunchBoxOrder() method 
+	
+	
+	public static boolean doDeletelbOrder(ArrayList <LunchBoxOrder> lbOrderList , String ordID ) { 
+		boolean isDeleted = false ; 
+		
+		for (int i = 0 ; i < lbOrderList.size() ; i++ ) { 
+			if (ordID.equalsIgnoreCase(lbOrderList.get(i).getOrdID()) ) { 
 				lbOrderList.remove(i) ; 
-				System.out.println("Order ID " + ordID + " deleted!");
+				
+				isDeleted = true ; 
 			}
 		}
-	} 
+		return isDeleted ;
+	}// end of doDeletelbOrder() method 
 
 
 }
