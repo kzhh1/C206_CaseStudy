@@ -391,7 +391,8 @@ public class C206_CaseStudy {
 	public static String retrieveMonthlymenu(ArrayList<monthlymenu> monthlyList) {
 		String output = "";
 		for(int i =0;i<monthlyList.size();i++) {
-			output = String.format("%-10s %-20s %-10s %-10s\n",monthlyList.get(i).getMonth(),monthlyList.get(i).getMenuset(),monthlyList.get(i).getDrink(),monthlyList.get(i).getFruit());
+			output = String.format("%-10s %-20s %-10s %-10s\n",monthlyList.get(i).getMonth(),
+					monthlyList.get(i).getMenuset(),monthlyList.get(i).getDrink(),monthlyList.get(i).getFruit());
 		}
 		return output;
 	}

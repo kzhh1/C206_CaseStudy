@@ -32,6 +32,9 @@ public class C206_CaseStudyTest {
 	private fruits fr ; 
 
 	// Zhen Hong : 
+	private monthlymenu mm1; 
+	
+	private ArrayList <monthlymenu> monthlyList;
 	
 	
 
@@ -286,16 +289,16 @@ public void testretrieveFruits() {
 		assertNotNull("Test if there is valid Monthlymenu arraylist to retrieve item from", menuSetList);
 				
 		//test if the list of monthlyMenu retrieved from the C206_CaseStudy is empty - boundary
-		String allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(menuSetList);
+		String allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(monthlyList);
 		String testOutput = "";
 		assertEquals("Test that the retrieved monthlylist is empty?", testOutput, allMonthlyMenu);
 	
 		//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
-		C206_CaseStudy.addMonthly(menuSetList,mm1);
+		C206_CaseStudy.addMonthly(monthlyList,mm1);
 		assertEquals("Test that Monthly Menu arraylist size is 1", 1, menuSetList.size());
 		
 		//test if the expected output string same as the list of monthlyMenu retrieved from the C206_CaseStudy	
-		allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(menuSetList);
+		allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(monthlyList);
 		testOutput += String.format("%-10s %-20s %-10s %-10s\n", "August","Sushi","Lemonade","Mixed berry fruit salad" );
 		
 		assertEquals("Test that viewMonthlyMenu", testOutput, allMonthlyMenu);
