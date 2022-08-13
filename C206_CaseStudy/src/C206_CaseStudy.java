@@ -211,7 +211,10 @@ public class C206_CaseStudy {
 					C206_CaseStudy.viewMonthlyMenu(monthlyList);
 				} else if (menuOpt == 2) { 
 					// Edit monthly menu : 
-					C206_CaseStudy.addmonthly(monthlyList);
+					monthlymenu mm = inputmonthly();
+					C206_CaseStudy.addMonthly(monthlyList, mm);
+					System.out.println("Monthly menu added");
+					
 				}
 				else {
 					System.out.println("Invalid option");
@@ -472,18 +475,18 @@ public class C206_CaseStudy {
 				}	
 	
 // Zhen Hong , ADD Monthly Menu :
-	public static monthlymenu addmonthly(ArrayList<monthlymenu> monthlyList) {
+	public static monthlymenu inputmonthly() {
 		String month = Helper.readString("Enter Month: ");
 		String mmenu = Helper.readString("Enter MenuSet: ");
 		String mdrink = Helper.readString("Enter Drink: ");
 		String mfruit = Helper.readString("Enter Fruit: ");
 		
-		monthlyList.add(new monthlymenu(month,mmenu,mdrink,mfruit));
-		
-		monthlymenu addmonthly = new monthlymenu(month,mmenu,mdrink,mfruit);
-		return addmonthly;
+		monthlymenu mm = new monthlymenu(month,mmenu,mdrink,mfruit);
+		return mm;
 	}
-	
+	public static void addMonthly(ArrayList<monthlymenu> monthlyList, monthlymenu mm) {
+		monthlyList.add(mm);
+	}
 	
 // Hui Hui , ADD LunchBoxOrder :
 	public static LunchBoxOrder inputLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList, ArrayList<menuSet> menuSetList) {

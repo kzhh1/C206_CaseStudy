@@ -142,10 +142,18 @@ public class C206_CaseStudyTest {
 		
 	}
 	// Zhen Hong : 
+	
 	@Test
 	public void testAddMonthlyMenu() { 
-		
+	// Item list is not null, so that can add a new item - boundary
+	assertNotNull("Check if there is valid Camcorder arraylist to add to", monthlyList);
+	//Given an empty list, after adding 1 item, the size of the list is 1 - normal
+	//The item just added is as same as the first item of the list
+	C206_CaseStudy.addMonthly(monthlyList, m1);
+	assertEquals("Check that Camcorder arraylist size is 1", 1, monthlyList.size());
+	assertSame("Check that Camcorder is added", m1, monthlyList.get(0));
 	}
+	
 	//Hui Hui : 
 	@Test 
 	public void testAddLunchBoxOrder() { 
