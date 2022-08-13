@@ -15,7 +15,7 @@ public class C206_CaseStudyTest {
 	
 	
 	// Zhen Hong : 
-	private monthlymenu m1; 
+	private monthlymenu mm1; 
 	
 	private ArrayList <monthlymenu> monthlyList;
 	
@@ -47,7 +47,7 @@ public class C206_CaseStudyTest {
 		
 		
 		// Zhen Hong : 
-		m1 =new monthlymenu("August","Sushi","Lemonade","Mixed berry fruit salad");
+		mm1 =new monthlymenu("August","Sushi","Lemonade","Mixed berry fruit salad");
 		
 		monthlyList = new ArrayList<monthlymenu>();
 
@@ -85,9 +85,9 @@ public class C206_CaseStudyTest {
 		assertNotNull("Check if there is valid Camcorder arraylist to add to", monthlyList);
 		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
 		//The item just added is as same as the first item of the list
-		C206_CaseStudy.addMonthly(monthlyList, m1);
+		C206_CaseStudy.addMonthly(monthlyList, mm1);
 		assertEquals("Check that Camcorder arraylist size is 1", 1, monthlyList.size());
-		assertSame("Check that Camcorder is added", m1, monthlyList.get(0));
+		assertSame("Check that Camcorder is added", mm1, monthlyList.get(0));
 	}
 	
 	//Hui Hui : 
@@ -136,7 +136,7 @@ public class C206_CaseStudyTest {
 		assertEquals("Test that the retrieved Chromebooklist is empty?", testOutput, allMonthlyMenu);
 		
 		//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
-		C206_CaseStudy.addmonthly(monthlyList);
+		C206_CaseStudy.addMonthly(monthlyList,mm1);
 		assertEquals("Test that chromebook arraylist size is 2", 1, monthlyList.size());
 		
 		//test if the expected output string same as the list of chromebooks retrieved from the SourceCentre	
@@ -212,7 +212,7 @@ public class C206_CaseStudyTest {
 		
 		
 		// Zhen Hong : 
-		m1 = null;
+		mm1 = null;
 		monthlyList = null ; 
 
 		// Hui Hui : 
