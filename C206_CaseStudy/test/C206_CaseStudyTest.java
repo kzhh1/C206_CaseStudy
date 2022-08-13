@@ -28,14 +28,17 @@ public class C206_CaseStudyTest {
 	
 	// Shi Hao : 
 	
+	private orderbill ob1 ; 
+	
+	private ArrayList <orderbill> orderBills ; 
+	
 	
 
 	public C206_CaseStudyTest() { 
 		super() ; 
 	}
 	
-	
-	
+
 	@Before
 	public void setUp() throws Exception {
 	// Prepare test data 
@@ -59,6 +62,11 @@ public class C206_CaseStudyTest {
 		
 		lbOrderList = new ArrayList<LunchBoxOrder>() ; 
 		// Shi hao :
+		
+		ob1 = new orderbill(1,"Chicken Chop", "Bandung", "Mango", 8.50) ; 
+		
+		orderBills = new ArrayList<orderbill>() ; 
+		
 		
 
 		
@@ -112,6 +120,13 @@ public class C206_CaseStudyTest {
 	// Shi Hao : 
 	@Test 
 	public void testAddOrderBill() { 
+		// Item list is not null, so that can add a new item - boundary
+		assertNotNull("Check if there is valid Camcorder arraylist to add to", orderBills );
+		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
+		//The item just added is as same as the first item of the list
+		orderBills.add(ob1);
+		assertEquals("Check that Camcorder arraylist size is 1", 1, orderBills.size());
+		assertSame("Check that Camcorder is added", ob1, orderBills.get(0) );
 		
 	}
 	
@@ -179,6 +194,8 @@ public class C206_CaseStudyTest {
 	
 	
 	// Shi Hao : 
+	
+	
 			
 	
 // ==================== test Deleting of classes ====================
@@ -230,6 +247,9 @@ public class C206_CaseStudyTest {
 		
 		
 		// Shi hao :
+		ob1 = null ; 
+		orderBills = null ; 
+		
 	}
 
 	@Test
