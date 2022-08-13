@@ -295,21 +295,7 @@ public class C206_CaseStudy {
 	}
 	
 	
-// For monthly menu : 
-	public static void viewMonthlyMenu(ArrayList<monthlymenu> monthlyList) {
-	C206_CaseStudy.setHeader("Monthly Menu");
-	String output = String.format("%-10s %-20s %-10s %-10s\n","MONTH","MENUSET","DRINKS","FRUITS");
-	output += retrieveMonthlymenu(monthlyList);
-	System.out.println(output);
-	}
-	
-	public static String retrieveMonthlymenu(ArrayList<monthlymenu> monthlyList) {
-		String output = "";
-		for(int i =0;i<monthlyList.size();i++) {
-			output = String.format("%-10s %-20s %-10s %-10s\n",monthlyList.get(i).getMonth(),monthlyList.get(i).getMenuset(),monthlyList.get(i).getDrink(),monthlyList.get(i).getFruit());
-		}
-		return output;
-	}
+
 
 	
 // For LunchBoxOrder : 
@@ -360,7 +346,7 @@ public class C206_CaseStudy {
 	}
 	
 
-// Desmond & Zhen Hong , VIEW MenuItems/Monthly Menu :
+// Desmond , VIEW Menu Items:
 	public static String retrieveMenuSet(ArrayList<menuSet> menuSetList) {
 		String output = "";
 
@@ -390,7 +376,6 @@ public class C206_CaseStudy {
 		C206_CaseStudy.setHeader("DRINK ITEMS");
 		String output = retrieveDrinks(drinkList);
 		System.out.println(output);
-
 	}
 
 	
@@ -407,6 +392,23 @@ public class C206_CaseStudy {
 		String output = retrieveFruits(fruitList);
 		System.out.println(output);
 	}
+	
+// Zhen Hong , VIEW monthly menu : 
+	
+	public static String retrieveMonthlymenu(ArrayList<monthlymenu> monthlyList) {
+		String output = "";
+		for(int i =0;i<monthlyList.size();i++) {
+			output = String.format("%-10s %-20s %-10s %-10s\n",monthlyList.get(i).getMonth(),monthlyList.get(i).getMenuset(),monthlyList.get(i).getDrink(),monthlyList.get(i).getFruit());
+		}
+		return output;
+	}
+	public static void viewMonthlyMenu(ArrayList<monthlymenu> monthlyList) {
+		C206_CaseStudy.setHeader("Monthly Menu");
+		String output = String.format("%-10s %-20s %-10s %-10s\n","MONTH","MENUSET","DRINKS","FRUITS");
+		output += retrieveMonthlymenu(monthlyList);
+		System.out.println(output);
+	}
+	
 	
 
 // Hui Hui , VIEW LunchBoxOrder ITEMS : 
