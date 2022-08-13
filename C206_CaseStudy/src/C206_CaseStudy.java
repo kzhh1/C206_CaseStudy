@@ -10,7 +10,7 @@ public class C206_CaseStudy {
 		ArrayList<drinks> drinkList = new ArrayList<drinks>(); 
 		ArrayList<fruits> fruitList = new ArrayList<fruits>(); 
 		ArrayList<LunchBoxOrder> lbOrderList = new ArrayList<LunchBoxOrder>(); 
-		ArrayList<orderbill> orderList = new ArrayList<orderbill>();
+		ArrayList<orderbill> orderBills = new ArrayList<orderbill>();
 		ArrayList<monthlymenu> monthlyList = new ArrayList<monthlymenu>();
 
 	// Menu :
@@ -123,19 +123,51 @@ public class C206_CaseStudy {
 				
 				
 			} else if (option == 4) {
-				C206_CaseStudy.menu();
+				C206_CaseStudy.orderBillMenu();
 				int menuOpt = Helper.readInt("Enter sub option > ") ;
 				
 		// Shi Hao Code : 
 				
 				if (menuOpt == 1) { 
-					// View - 
+					// Add - 
+					int serialnumber = orderBills.size() + 1;
+					String foodname = Helper.readString("Enter Food Item Name > ") ;
+					String drinkname = Helper.readString("Enter Drink Item Name > ") ;
+					String fruitname = Helper.readString("Enter Fruit Item Name > ") ;
+				    double price = Helper.readDouble("Enter Total Price of items > ");
+				    //orderbill.addorderbill
+				    orderBills.add(new orderbill(serialnumber, foodname, drinkname, fruitname, price));
+					System.out.println("Your order bill has been added.");
 					
 				} else if (menuOpt == 2 ) { 
-					// Add - 
+					// View - 
+					
+					int i = Helper.readInt("Enter serial number of entry to view > ");
+					
+					while (i > orderBills.size()) {
+						System.out.println("Please enter a valid serial number!");
+						i = Helper.readInt("Enter serial number of entry to view > ");
+					}
+					
+					
+					orderbill orderbill = orderBills.get(i - 1);
+					System.out.println("Serial Number: " + orderbill.getSerialnumber());
+					System.out.println("Your Order: ");
+					System.out.println("Food of Choice: " + orderbill.getMenuset());
+					System.out.println("Drink of Choice: " + orderbill.getDrink());
+					System.out.println("Fruit of Choice: " + orderbill.getFruit());
+					System.out.println("Total Cost: $" + orderbill.getPrice());
+
 					
 				} else if (menuOpt == 3 ) { 
 					// Delete -
+					int i = Helper.readInt("Enter serial number of entry to delete > ");
+					while (i > orderBills.size()) {
+						System.out.println("Please enter a valid serial number!");
+						i = Helper.readInt("Enter serial number of entry to delete > ");
+					}
+					orderBills.remove(i - 1);
+					System.out.println("Entry has been deleted.");
 					
 				} else if (menuOpt == 4) {
 					System.out.println("Bye!");
@@ -172,6 +204,16 @@ public class C206_CaseStudy {
 		System.out.println("1. Display menu");
 		System.out.println("2. Add MenuSet");
 		System.out.println("3. Delete ");
+		System.out.println("4. Quit");
+	}
+	
+	// for sh
+	
+	public static void orderBillMenu() {
+		C206_CaseStudy.setHeader("MENU OPTIONS");
+		System.out.println("1. Add Order Bill");
+		System.out.println("2. View Existing Order Bill");
+		System.out.println("3. Delete Existing Order Bill");
 		System.out.println("4. Quit");
 	}
 
@@ -369,4 +411,3 @@ public class C206_CaseStudy {
 	
 
 }
-	
