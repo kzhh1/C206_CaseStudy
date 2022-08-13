@@ -18,22 +18,21 @@ public class C206_CaseStudyTest {
 	private ArrayList<menuSet> menuSetList;
 	private ArrayList<drinks> drinkList;
 	private ArrayList<fruits> fruitList;
-	private void viewMenuSet() {
-	}
-	private void viewDrinks() {
-	}
-	private void viewFruits() {
-	}
+//	private void viewMenuSet() {
+//	}
+//	private void viewDrinks() {
+//	}
+//	private void viewFruits() {
+//	}
 	private menuSet ms ; 
 	private drinks dr ;
 	private fruits fr ; 
 
 	// Zhen Hong : 
 	private monthlymenu mm1; 
-	
+
 	private ArrayList <monthlymenu> monthlyList;
 	
-
 	// Hui Hui 
 	private LunchBoxOrder lb1 ; 
 	private LunchBoxOrder lb2 ; 
@@ -41,13 +40,10 @@ public class C206_CaseStudyTest {
 	private ArrayList <LunchBoxOrder> lbOrderList ; 
 	
 	// Shi Hao : 
-	
 	private orderbill ob1 ; 
 	
 	private ArrayList <orderbill> orderBills ; 
 	
-	
-
 	public C206_CaseStudyTest() { 
 		super() ; 
 	}
@@ -60,7 +56,6 @@ public class C206_CaseStudyTest {
 		// Chin Wei : 
 		ac = new Account(1,"84651","Mary","Susan");
 
-		
 		// Desmond : 
 		menuSetList.add(new menuSet("Chicken Chop"));
 		menuSetList.add(new menuSet("Chicken Curry"));
@@ -73,24 +68,20 @@ public class C206_CaseStudyTest {
 		fruitList.add(new fruits("Strawberry"));
 		
 		// Zhen Hong : 
+		mm1 =new monthlymenu("August","Sushi","Lemonade","Mixed berry fruit salad");
 		
-		
+		monthlyList = new ArrayList<monthlymenu>();
 
 		// Hui Hui : 
-		
 		lb1 = new LunchBoxOrder("lb001" , "Chicken Chop", "Bandung", "Mango") ;
 		lb2 = new LunchBoxOrder("lb002", "chicken Curry", "Teh", "Watermelon") ;
 		
-		
 		lbOrderList = new ArrayList<LunchBoxOrder>() ; 
-		// Shi hao :
 		
+		// Shi hao :
 		ob1 = new orderbill(1,"Chicken Chop", "Bandung", "Mango", 8.50) ; 
 		
 		orderBills = new ArrayList<orderbill>() ; 
-		
-		
-
 		
 	}
 	
@@ -162,11 +153,31 @@ public class C206_CaseStudyTest {
 	@Test
 	public void testAddMonthlyMenu() { 
 		
+		// Item list is not null, so that can add a new item - boundary
+		assertNotNull("Check if there is valid Camcorder arraylist to add to", monthlyList);
+		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
+		//The item just added is as same as the first item of the list
+		C206_CaseStudy.addMonthly(monthlyList, mm1);
+		assertEquals("Check that Camcorder arraylist size is 1", 1, monthlyList.size());
+		assertSame("Check that Camcorder is added", mm1, monthlyList.get(0));
 	}
+	
 	//Hui Hui : 
 	@Test 
 	public void testAddLunchBoxOrder() { 
+		// Item list is not null, so that can add a new item - boundary
+		assertNotNull("Check if there is valid LunchBoxOrder arraylist to add to", lbOrderList);
+		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
+		//The item just added is as same as the first item of the list
+		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb1);
+		assertEquals("Check that LunchBoxOrder arraylist size is 1", 1, lbOrderList.size());
+		assertSame("Check that Lunch Box Order is added", lb1, lbOrderList.get(0));
 		
+		//Add another item. test The size of the list is 2? -normal
+		//The item just added is as same as the second item of the list
+		C206_CaseStudy.addLunchBoxOrder(lbOrderList, lb2);
+		assertEquals("Check that LunchBoxOrder arraylist size is 2", 2, lbOrderList.size());
+		assertSame("Check that LunchBoxOrder is added", lb2, lbOrderList.get(1));
 		
 	}
 	// Shi Hao : 
@@ -290,7 +301,8 @@ public void testretrieveFruits() {
 	
 		//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
 		C206_CaseStudy.addMonthly(monthlyList,mm1);
-		assertEquals("Test that chromebook arraylist size is 1", 1, monthlyList.size());
+
+		assertEquals("Test that Monthly Menu arraylist size is 1", 1, monthlyList.size() );
 		
 		//test if the expected output string same as the list of monthlyMenu retrieved from the C206_CaseStudy	
 		allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(monthlyList);
@@ -303,7 +315,7 @@ public void testretrieveFruits() {
 // Hui Hui : 
 	@Test
 	public void testRetrieveLunchBoxOrder() {
-		
+		//fail("Not yet implemented");
 		// Test if Item list is not null but empty -boundary
 		assertNotNull("Test if there is valid LunchBoxOrder arraylist to retrieve item", lbOrderList);
 				
@@ -439,9 +451,6 @@ public void testretrieveFruits() {
 		assertEquals("Test that the LunchBoxOrder arraylist size is 0", 0, lbOrderList.size());
 
 	}
-	
-	
-	
 	
 	
 	@After
