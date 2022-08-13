@@ -15,7 +15,9 @@ public class C206_CaseStudyTest {
 	
 	
 	// Zhen Hong : 
+	private monthlymenu m1; 
 	
+	private ArrayList <monthlymenu> monthlyList;
 	
 
 	// Hui Hui 
@@ -45,8 +47,9 @@ public class C206_CaseStudyTest {
 		
 		
 		// Zhen Hong : 
+		m1 =(new monthlymenu("August","Sushi","Lemonade","Mixed berry fruit salad"));
 		
-		
+		monthlyList = new ArrayList<monthlymenu>();
 
 		// Hui Hui : 
 		
@@ -130,7 +133,7 @@ public class C206_CaseStudyTest {
 		
 		
 		// Zhen Hong : 
-		
+		m1 = null;
 		
 
 		// Hui Hui : 
