@@ -13,10 +13,6 @@ public class LunchBoxOrder { // Committed by Hui
 		this.menuset=menuset;
 		this.drink=drink;
 		this.fruit=fruit;
-		this.menuset = menuset;
-		this.drink = drink;
-		this.fruit = fruit;
-
 	}
 
 	public String getOrdID() {
