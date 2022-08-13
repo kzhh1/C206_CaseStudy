@@ -171,7 +171,7 @@ public class C206_CaseStudy {
 					
 					int i = Helper.readInt("Enter serial number of entry to view > ");
 					
-					while (i > orderBills.size()) {
+					while (i <= 0 || i > orderBills.size()) {
 						System.out.println("Please enter a valid serial number!");
 						i = Helper.readInt("Enter serial number of entry to view > ");
 					}
@@ -189,7 +189,7 @@ public class C206_CaseStudy {
 				} else if (menuOpt == 3 ) {
 					// Delete -
 					int i = Helper.readInt("Enter serial number of entry to delete > ");
-					while (i > orderBills.size()) {
+					while (i <= 0 || i > orderBills.size()) {
 						System.out.println("Please enter a valid serial number!");
 						i = Helper.readInt("Enter serial number of entry to delete > ");
 					}
