@@ -47,8 +47,9 @@ public class C206_CaseStudyTest {
 		
 		
 		// Zhen Hong : 
+
 		mm1 =new monthlymenu("August","Sushi","Lemonade","Mixed berry fruit salad");
-		
+
 		monthlyList = new ArrayList<monthlymenu>();
 
 		// Hui Hui : 
@@ -126,28 +127,27 @@ public class C206_CaseStudyTest {
 	
 	@Test
 	public void testRetrieveMonthlyMenu() {
+		
 		//fail("Not yet implemented");
 		// Test if Item list is not null but empty - boundary
-		assertNotNull("Test if there is valid Chromebook arraylist to retrieve item from", monthlyList);
-		
+		assertNotNull("Test if there is valid Monthlymenu arraylist to retrieve item from", monthlyList);
+				
 		//test if the list of Chromebook retrieved from the SourceCentre is empty - boundary
 		String allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(monthlyList);
 		String testOutput = "";
-		assertEquals("Test that the retrieved Chromebooklist is empty?", testOutput, allMonthlyMenu);
-		
+		assertEquals("Test that the retrieved monthlylist is empty?", testOutput, allMonthlyMenu);
+	
 		//Given an empty list, after adding 2 items, test if the size of the list is 2 - normal
 		C206_CaseStudy.addMonthly(monthlyList,mm1);
-		assertEquals("Test that chromebook arraylist size is 2", 1, monthlyList.size());
+		assertEquals("Test that chromebook arraylist size is 1", 1, monthlyList.size());
 		
 		//test if the expected output string same as the list of chromebooks retrieved from the SourceCentre	
-		allMonthlyMenu= C206_CaseStudy.retrieveMonthlymenu(monthlyList);
+		allMonthlyMenu = C206_CaseStudy.retrieveMonthlymenu(monthlyList);
 		testOutput += String.format("%-10s %-20s %-10s %-10s\n", "August","Sushi","Lemonade","Mixed berry fruit salad" );
 		
-		
-		assertEquals("Test that ViewAllChromebooklist", testOutput, allMonthlyMenu);
+		assertEquals("Test that viewMonthlyMenu", testOutput, allMonthlyMenu);
 	}
 
-	
 	
 	// Hui Hui : 
 	@Test
@@ -155,7 +155,8 @@ public class C206_CaseStudyTest {
 		//fail("Not yet implemented");
 		// Test if Item list is not null but empty -boundary
 		assertNotNull("Test if there is valid LunchBoxOrder arraylist to retrieve item", lbOrderList);
-		
+				
+	
 		//test if the list of LunchBoxOrder retrieved from the C206_CaseStudy is empty - boundary
 		String allLunchBoxOrder= C206_CaseStudy.retrieveLunchBoxOrder(lbOrderList);
 		String testOutput = "";

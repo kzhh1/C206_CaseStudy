@@ -416,7 +416,7 @@ public class C206_CaseStudy {
 
 // Hui Hui , VIEW LunchBoxOrder ITEMS : 
 	public static String retrieveLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList) {
-		String output = String.format("%-10s %-20s %-10s %-10s\n", "Order ID", "Menu Set", "Drink", "Fruit");
+		String output = "" ; 
 		for (int i = 0; i < lbOrderList.size(); i++) {
 			output += String.format("%-10s %-20s %-10s %-10s\n", lbOrderList.get(i).getOrdID(),
 					lbOrderList.get(i).getMenuset(), lbOrderList.get(i).getDrink(), lbOrderList.get(i).getFruit());
@@ -425,7 +425,8 @@ public class C206_CaseStudy {
 	}
 	public static void viewLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList) {
 		C206_CaseStudy.setHeader("Lunch Box Order ITEMS");
-		String output = retrieveLunchBoxOrder(lbOrderList);
+		String output = String.format("%-10s %-20s %-10s %-10s\n", "Order ID", "Menu Set", "Drink", "Fruit");
+		output += retrieveLunchBoxOrder(lbOrderList);
 		System.out.println(output);
 	}
 	
