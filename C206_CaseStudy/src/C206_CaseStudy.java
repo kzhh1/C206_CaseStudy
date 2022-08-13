@@ -33,6 +33,9 @@ public class C206_CaseStudy {
 		lbOrderList.add(new LunchBoxOrder("lb001", "Chicken Chop", "Bandung", "Mango"));
 		lbOrderList.add(new LunchBoxOrder("lb002", "chicken Curry", "Teh", "Watermelon"));
 
+	// Orderbill : 
+		orderBills.add(new orderbill(1,"Chicken Chop", "Bandung", "Mango", 8.50) );
+		
 		int option = 0;
 
 		while (option != 6) {
@@ -125,11 +128,7 @@ public class C206_CaseStudy {
 					C206_CaseStudy.addLunchBoxOrder(lbOrderList, lbOrd);
 					System.out.println("Lunch Box Order has been placed");
 					
-					
-//					LunchBoxOrder lbOrd = inputLunchBoxOrder() ; 
-//					C206_CaseStudy.addLunchBoxOrder(lbOrderList , lbOrd) ; 
-//					System.out.println("Lunch Box Order has been placed");
-					
+						
 				} else if (menuOpt == 3 ) { 
 					// Delete - 
 					deleteLunchBoxOrder(lbOrderList) ; 
@@ -319,19 +318,6 @@ public class C206_CaseStudy {
 		Helper.line(30, "-");
 	}
 	
-	
-	
-// NOT IN USE YET
-	public static String showAvailability(boolean isAvailable) {
-		String avail;
-
-		if (isAvailable == true) {
-			avail = "Yes";
-		} else {
-			avail = "No";
-		}
-		return avail;
-	}
 
 	// ================================= Option 1 View (CRUD - Read)================================= 
 	
