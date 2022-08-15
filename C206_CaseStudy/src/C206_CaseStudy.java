@@ -498,18 +498,19 @@ public class C206_CaseStudy {
 			} else if (menuSet.equalsIgnoreCase("Vegetarian")) {
 				menuType += menuSetList.get(2).getMenuItem();
 				break;
-			} else {
+			} else{
 				System.out.println("menuSet does not exist. Please choose again!!");
+				menuSet = Helper.readString("Enter menuSet > ");
 			}
-		}
+			
+		}// end of for loop 
 		String drink = Helper.readString("Enter drink > ");
-		
 		String fruit = Helper.readString("Enter fruit > ");
 
 		LunchBoxOrder lbOrd = new LunchBoxOrder(ordID, menuType, drink, fruit);
 		return lbOrd;
 	}
-	
+
 	public static void addLunchBoxOrder(ArrayList<LunchBoxOrder> lbOrderList, LunchBoxOrder lbOrd) {
 		lbOrderList.add(lbOrd);
 	}

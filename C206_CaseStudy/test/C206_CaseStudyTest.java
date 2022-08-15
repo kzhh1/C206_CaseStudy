@@ -93,26 +93,24 @@ public class C206_CaseStudyTest {
 	@Test
 	public void testcreateAccount() {
 		// Test if account list is not null but empty, so that can add a new account
-				assertNotNull("Test if there is valid account arraylist to add to", newAccount);
-				
-				//test if the list of account retrieved from the CaseStudy is empty
-				String allAccount= C206_CaseStudy.getAccountInfo(newAccount);
-				String testOutput = "";
-				assertEquals("Check that account list", testOutput, allAccount);
-						
-				//Given an empty list, after adding 2 account, test if the size of the list is 2
-				C206_CaseStudy.newAccountAdded(newAccount, ac);
-				assertEquals("Test if that account arraylist size is 2?", 2, newAccount.size());
-				
-				//test if the expected output string same as the list of account retrieved from the CaseStudy
-				allAccount= C206_CaseStudy.getAccountInfo(newAccount);
-
-				testOutput = String.format("%-15s %-20s %-20s %-15s\n",1,"84651","Mary","Susan");
-
-				
-			
-				assertEquals("Check that account list", testOutput, allAccount);
+		assertNotNull("Test if there is valid account arraylist to add to", newAccount);
 		
+		//test if the list of account retrieved from the CaseStudy is empty
+		String allAccount= C206_CaseStudy.getAccountInfo(newAccount);
+		String testOutput = "";
+		assertEquals("Check that account list", testOutput, allAccount);
+				
+		//Given an empty list, after adding 2 account, test if the size of the list is 2
+		C206_CaseStudy.newAccountAdded(newAccount, ac);
+		assertEquals("Test if that account arraylist size is 2?", 2, newAccount.size());
+		
+		//test if the expected output string same as the list of account retrieved from the CaseStudy
+		allAccount= C206_CaseStudy.getAccountInfo(newAccount);
+
+		testOutput = String.format("%-15s %-20s %-20s %-15s\n",1,"84651","Mary","Susan");
+
+		assertEquals("Check that account list", testOutput, allAccount);
+
 	}
 
 	// Desmond : 
@@ -152,12 +150,12 @@ public class C206_CaseStudyTest {
 	public void testAddMonthlyMenu() { 
 		
 		// Item list is not null, so that can add a new item - boundary
-		assertNotNull("Check if there is valid Camcorder arraylist to add to", monthlyList);
+		assertNotNull("Check if there is valid monthlymenu arraylist to add to", monthlyList);
 		//Given an empty list, after adding 1 item, the size of the list is 1 - normal
 		//The item just added is as same as the first item of the list
 		C206_CaseStudy.addMonthly(monthlyList, mm1);
-		assertEquals("Check that Camcorder arraylist size is 1", 1, monthlyList.size());
-		assertSame("Check that Camcorder is added", mm1, monthlyList.get(0));
+		assertEquals("Check that monthlymenu arraylist size is 1", 1, monthlyList.size());
+		assertSame("Check that monthlymenu is added", mm1, monthlyList.get(0));
 	}
 	
 	//Hui Hui : 
@@ -396,7 +394,7 @@ public class C206_CaseStudyTest {
 	public void testdeleteDrinks() { 
 		assertNotNull("Test if there is valid drink arraylist to delete from", drinkList);
 		drinkList.add(dr);
-		 
+
 		drinkList.remove(0);
 		assertEquals("Test that the drink arraylist size is 0", 0, drinkList.size());
 
@@ -453,6 +451,10 @@ public class C206_CaseStudyTest {
 		ms = null ; 
 		dr = null;
 		fr = null; 
+		
+		menuSetList = null ; 
+		drinkList = null ; 
+		fruitList = null ; 
 		
 		// Zhen Hong : 
 		mm1 = null ; 
